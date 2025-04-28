@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={`${isOpen ? 'bg-black' : 'bg-transparent'}`}>
+    <nav className={`${isOpen ? 'bg-black' : 'bg-transparent'} transition duration-600`}>
       <div className="max-w-full mx-5 px-10 sm:px-20">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -69,9 +69,9 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`flex flex-row bg-black items-center justify-center ${isOpen ? 'block' : 'hidden'}`}>
+      <div className={`flex flex-row bg-black items-center justify-center ${isOpen ? 'block' : 'hidden'} transition`}>
 
-        <div className="pt-2 pb-3 pr-32 space-y-1 mr-28 px-3 h-screen flex flex-col justify-center md:border-r-gray-900 md:border-r-2
+        <div className="pt-2 pb-3 pr-32 space-y-1 mr-28 px-3 h-screen flex flex-col justify-center items-center transition duration-300 origin-left  md:border-r-gray-900 md:border-r-2 
           
         ">
           <Link
