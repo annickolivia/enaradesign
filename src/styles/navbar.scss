@@ -1,0 +1,51 @@
+a {
+    color: grey;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) translateX(-20px);
+        width: 6px;
+        height: 6px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.6s ease;
+      }
+
+    &:hover {
+        transform: translateX(20px);
+        transition: all 0.6s ease;
+        
+        
+        &::before {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0) scale(1.6);
+            color: grey // dot slides into view
+        }
+    }
+}
+
+.sous-link {
+    font-size: 16px;
+    color: grey;
+    padding: 0;
+
+    &::before {
+        content:''
+    }
+    &:hover {
+        color: white;
+        transition: all 0.6s ease;
+    }
+
+    p {
+        color: grey;
+    }
+
+}
+
+.pages {
+    width: 50%;
+}
