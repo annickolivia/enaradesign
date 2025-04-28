@@ -1,0 +1,2 @@
+bugs:
+logo doesn't change its color 
