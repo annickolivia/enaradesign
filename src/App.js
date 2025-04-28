@@ -7,8 +7,9 @@ import Banner from './components/Banner/Banner.js';
 import Footer from './components/Acceuil/Footer.js';
 import About from './components/Acceuil/About.js';
 import Frame from './components/Frame/Frame.js';
+import Header from './components/Header.js';
 
-import 'bootstrap/dist/css/bootstrap.css';
+
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -16,21 +17,24 @@ import 'swiper/css';
 import './styles/style.scss'
 
 function App() {
-  const projects = [
-    // Project data...
-  ];
+  // const projects = [
+  //   // Project data...
+  // ];
 
   return (
-    <Router>
-      <Frame />
-      <div className="mil-content">
-        <Banner />
-        <About />
-        <Portfolio projects={projects} />
-        <Services />
-      </div>
-      <Footer />
-    </Router>
+    <div className="mil-content">
+       <Header />
+    </div>
+    // <Router>
+    //   <Frame />
+    //   <div className="mil-content">
+    //     <Banner />
+    //     <About />
+    //     <Portfolio projects={projects} />
+    //     <Services />
+    //   </div>
+    //   <Footer />
+    // </Router>
   );
 }
 
