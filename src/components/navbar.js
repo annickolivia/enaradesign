@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/navbar.scss'
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
+import { mainColors } from '../styles/variables';
+import Nav from './Nav';
 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [clicked, setClicked] = useState('');
   const Portfolio = [
     "Architecture", 
     "Design d'Interieur", 
@@ -14,10 +18,27 @@ function Navbar() {
     "Réalité Virtuel"
   ]
 
+  const PortCateg = [
+    'Professionnel',
+    'Commercial',
+    'Residentiel',
+    'Urbain'
+  ]
+
   const partenaires = [
     "Hay Tao Home",
     "Enara Construction",
     "Autres"
+  ]
+
+  const services = [
+    "Conception",
+    "Construction"
+  ]
+
+  const articles = [
+    "Blog",
+    "Formation"
   ]
 
   const toggleMenu = () => {
@@ -25,25 +46,24 @@ function Navbar() {
   };
 
   return (
-    <nav className={`${isOpen ? 'bg-black' : 'bg-transparent'} transition duration-600`}>
-      <div className="max-w-full mx-5 px-10 sm:px-20">
-        <div className="flex justify-between items-center h-16">
+    <nav className="transition duration-600 absolute w-screen">
+        <div className="flex justify-between items-center h-44 px-20 md:px-32 absolute w-screen z-50 bg-transparent">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className={`text-2xl font-bold ${isOpen ? 'text-white':' text-gray-800'}`}>Enara.</span>
+            <Logo source={`${isOpen ? '/img/logo_blanc.png' : '/img/logo_beige.png'}`} size={12}/>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-indigo-600 focus:outline-none"
+              className="text-gray-700 focus:outline-none max-w-28"
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6"
+                className="md:w-10 md:h-10 w-8 h-8"
                 fill="none"
-                stroke="currentColor"
+                stroke={`${isOpen ? 'white' : mainColors.mainBrown }`}
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -65,43 +85,25 @@ function Navbar() {
               </svg>
             </button>
           </div>
-        </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`flex flex-row bg-black items-center justify-center ${isOpen ? 'block' : 'hidden'} transition`}>
-
-        <div className="pt-2 pb-3 pr-32 space-y-1 mr-28 px-3 h-screen flex flex-col justify-center items-center transition duration-300 origin-left  md:border-r-gray-900 md:border-r-2 
-          
-        ">
-          <Link
-            to="/accueil"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-          >
-            Accueil
-          </Link>
-          <Link
-            to="/portfolio"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white  transition duration-300"
-          >
-            Portfolio
-          </Link>
-          <Link
-            to="/services"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-          >
-            Services
-          </Link>
-          <Link
-            to="/articles"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-          >
-            Articles
-          </Link>
-        </div>
+      <div className={`
+        flex flex-row items-center justify-center  md:h-screen pb-52 relative pt-64
+        transition-all duration-300 ease-in-out transform dropmenu
+        ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}   
+      `}
+      >
+        <Nav 
+          articles={articles} 
+          PortCateg={PortCateg} 
+          services={services} 
+          clicked={clicked} 
+          setClicked={setClicked}
+        />
         {/* droiiteeee ---------------*/}
-        <div className='flex-col droite h-screen justify-center align-items-center hidden md:flex'>
-          <div className="droite-haut flex md:border-b-gray-800 md:border-b-2 md:py-10">
+        <div className='flex-col droite justify-center px-48 hidden md:flex w-1/2 md:border-l-white md:border-l-2'>
+          <div className="droite-haut flex justify-between md:border-b-white md:border-b-2 md:pb-10">
             {/* Portfolio */}
             <div>
               <h6 className="text-white">Porfolio</h6>
@@ -132,8 +134,8 @@ function Navbar() {
                 })}
             </div>
           </div>
-          <div className='droite-bas flex sous-link mt-10'>
-                <div>
+          <div className='droite-bas flex justify-between mt-10'>
+                <div className='mr-14'>
                   <h6 className="text-white">Madagascar</h6>
                   <p>Lot Xxxxxxxx</p>
                   <p>Antsakaviro</p>
@@ -142,13 +144,11 @@ function Navbar() {
                 </div>
                 <div>
                   <h6 className='text-white'>International</h6>
-
                   <p>xxxxxxxxxxxxx</p>
                   <p>+31 174 705 811</p>
                 </div>
           </div>
         </div>
-
       </div>
     </nav>
   );

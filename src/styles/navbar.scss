@@ -1,5 +1,11 @@
-a {
-    color: grey;
+@import './variables';
+
+.pages {
+    text-align:left;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+    width: 150px;
     &::before {
         content: '';
         position: absolute;
@@ -14,7 +20,7 @@ a {
         transition: all 0.6s ease;
       }
 
-    &:hover {
+    &:hover, &:active {
         transform: translateX(20px);
         transition: all 0.6s ease;
         
@@ -29,23 +35,32 @@ a {
 
 .sous-link {
     font-size: 16px;
-    color: grey;
+    color: rgb(222, 222, 222);
     padding: 0;
 
-    &::before {
-        content:''
-    }
+
     &:hover {
         color: white;
+        transform: translateX(10px);
         transition: all 0.6s ease;
     }
 
     p {
-        color: grey;
+        color: rgb(223, 223, 223);
     }
 
 }
 
-.pages {
-    width: 50%;
+.droite-bas {
+    p{
+        color: rgb(222, 222, 222);
+    }
 }
+
+.dropmenu {
+    background-color: $mainMarron;
+}
+
+// .submenu {
+//     margin-left: 8rem;
+// }

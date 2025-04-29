@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './navbar';
 import '../styles/header.scss';
 
-function Header({children}) {
+function Header() {
   return (
     <header>
       <Navbar />
