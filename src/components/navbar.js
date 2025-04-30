@@ -46,45 +46,46 @@ function Navbar() {
   };
 
   return (
-    <nav className="transition duration-600 absolute w-screen">
-        <div className="flex justify-between items-center h-44 px-20 md:px-32 absolute w-screen z-50 bg-transparent">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Logo source={`${isOpen ? '/img/logo_blanc.png' : '/img/logo_beige.png'}`} size={12}/>
-          </div>
+    <nav className="transition duration-600 w-screen fixed h-32 top-0 z-40 " 
+    >
+      <div className="flex justify-between items-center h-44 px-20 md:px-32 absolute w-screen z-50 bg-transparent">
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <Logo source={`/img/logo_blanc.png`} size={12}/>
+        </div>
 
-          {/* Mobile menu button */}
-          <div className="flex items-center">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-700 focus:outline-none max-w-28"
-              aria-label="Toggle menu"
+        {/* Mobile menu button */}
+        <div className="flex items-center">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-700 focus:outline-none max-w-28"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="md:w-10 md:h-10 w-8 h-8 animation-all"
+              fill="none"
+              stroke={`white`}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                className="md:w-10 md:h-10 w-8 h-8"
-                fill="none"
-                stroke={`${isOpen ? 'white' : mainColors.mainBrown }`}
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -101,6 +102,7 @@ function Navbar() {
           clicked={clicked} 
           setClicked={setClicked}
         />
+
         {/* droiiteeee ---------------*/}
         <div className='flex-col droite justify-center px-48 hidden md:flex w-1/2 md:border-l-white md:border-l-2'>
           <div className="droite-haut flex justify-between md:border-b-white md:border-b-2 md:pb-10">
@@ -108,45 +110,45 @@ function Navbar() {
             <div>
               <h6 className="text-white">Porfolio</h6>
               {Portfolio.map((item, index) => {
-                  return (
-                    <Link
-                      key={index}
-                     to={`/${item.toLowerCase()}`}
-                      className="block px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300 sous-link"
-                    >
-                      {item}
-                    </Link>
-                  );
+                return (
+                  <Link
+                    key={index}
+                    to={`/${item.toLowerCase()}`}
+                    className="block px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300 sous-link"
+                  >
+                    {item}
+                  </Link>
+                );
               })}
             </div>
             <div>
               <h6 className="text-white">Nos Partenaires</h6>
-                {partenaires.map((item, index) => {
-                  return (
-                    <Link
-                      key={index}
-                     to={`/${item.toLowerCase()}`}
-                      className="block px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300 sous-link"
-                    >
-                      {item}
-                    </Link>
-                  );
-                })}
+              {partenaires.map((item, index) => {
+                return (
+                  <Link
+                    key={index}
+                    to={`/${item.toLowerCase()}`}
+                    className="block px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300 sous-link"
+                  >
+                    {item}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className='droite-bas flex justify-between mt-10'>
-                <div className='mr-14'>
-                  <h6 className="text-white">Madagascar</h6>
-                  <p>Lot Xxxxxxxx</p>
-                  <p>Antsakaviro</p>
-                  <p>Antananarivo</p>
-                  <p>+261 32 05 802 56</p>
-                </div>
-                <div>
-                  <h6 className='text-white'>International</h6>
-                  <p>xxxxxxxxxxxxx</p>
-                  <p>+31 174 705 811</p>
-                </div>
+            <div className='mr-14'>
+              <h6 className="text-white">Madagascar</h6>
+              <p>Lot Xxxxxxxx</p>
+              <p>Antsakaviro</p>
+              <p>Antananarivo</p>
+              <p>+261 32 05 802 56</p>
+            </div>
+            <div>
+              <h6 className='text-white'>International</h6>
+              <p>xxxxxxxxxxxxx</p>
+              <p>+31 174 705 811</p>
+            </div>
           </div>
         </div>
       </div>

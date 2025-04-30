@@ -43,26 +43,34 @@ function Footer() {
     ]
   
   return (
-    <footer className='px-10 py-16 flex flex-col h-full justify-between' style={{backgroundColor: mainColors.mainBrown, height:'600px'}}>
-      <Logo source='/img/logo_blanc.png'size={12}/>
-      <p className='text-white'>Contactez-nous:</p>
-      <EmailBox />
-      <div className='flex w-2/4 justify-between'>
-        {
-          policy.map((po, index) => {
-            return (
-              <Link to={po.link} key={index} style={{textDecoration: 'none'}}>
-                <i className={`text-white ${po.icon} text-4xl`} ></i>
-              </Link>
-            )
-          })
-        }
+    <footer 
+      className=' z-50 py-16 px-10 flex flex-col justify-between h-[700px]
+        md:flex-row md:py-20 md:h-[400px] md:px-72
+        ' style={{backgroundColor: mainColors.mainBrown}}>
+      <div className='h-1/2 mb-10 flex flex-col justify-around md:w-1/2 md:h-full'>
+        <Logo source='/img/logo_blanc.png'size={12}/>
+        <p className='text-white'>Contactez-nous:</p>
+        <EmailBox />
       </div>
-      <h6 className='text-white'>Madagascar</h6>
-      <div className='text-white'>
-        <p>Lot xxxxxxxxxxxxx Antsakaviro</p>
-        <p>Antananrivo +261 32 05 802 56</p>
+      <div className='h-1/2 flex flex-col justify-between md:items-end md:w-1/2 md:h-full '>
+        <div className='flex w-2/4 justify-between'>
+          {
+            policy.map((po, index) => {
+              return (
+                <Link to={po.link} key={index} style={{textDecoration: 'none'}}>
+                  <i className={`text-white ${po.icon} text-4xl`} ></i>
+                </Link>
+              )
+            })
+          }
+        </div>
+        <h6 className='text-white'>Madagascar</h6>
+        <div className='text-white'>
+          <p>Lot xxxxxxxxxxxxx Antsakaviro</p>
+          <p>Antananrivo +261 32 05 802 56</p>
+        </div>
       </div>
+     
     </footer>
   )
 }

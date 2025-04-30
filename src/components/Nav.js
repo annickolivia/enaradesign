@@ -1,137 +1,91 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react';
 import { mainColors } from '../styles/variables';
 import { Link } from 'react-router-dom';
 
+function Dropdown({ title, path, items = [], clicked, setClicked }) {
+  const contentRef = useRef(null);
+  const isOpen = clicked === title.toLowerCase();
+  const [height, setHeight] = useState('0px');
 
-function Nav({clicked, services, setClicked, PortCateg, articles}) {
+  useEffect(() => {
+    if (isOpen) {
+      setHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setHeight('0px');
+    }
+  }, [isOpen]);
+
   return (
-    <div className="h-96 pt-2 pb-3 space-y-1 px-3 flex flex-col justify-center items-center transition duration-300 origin-left md:w-1/2">
-          <Link
-            to="/accueil"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-            onClick={() =>{
-              if (clicked === 'accueil') setClicked('')
-              else setClicked('accueil');
-            }}
-          >
-            Accueil
-          </Link>
+    <div className="w-full flex flex-col items-center relative transition-all duration-300">
+      <Link
+        to={`/${path}`}
+        className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
+        onClick={() => {
+          if (isOpen) setClicked('');
+          else setClicked(title.toLowerCase());
+        }}
+      >
+        {title}
+      </Link>
 
-          <Link
-            to="/portfolio"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-            value='portfolio'
-            onClick={() =>{
-              if (clicked === 'portfolio') setClicked('')
-              else setClicked('portfolio');
-            }}
-          >
-            Portfolio
-            <div className={` submenu
-                absolute mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden
-                transition-all duration-300 ease-in-out transform origin-top
-                ${clicked.toLowerCase() === 'portfolio' ? 
-                'opacity-100 translate-y-0 scale-y-100' : 
-                'opacity-0 -translate-y-2 scale-y-95 pointer-events-none'
-          }
-              `}>
-              <ul>
-              {
-                PortCateg.map((p, index) => {
-                  return (
-                    <li key={index} className='text-base text-left hover:bg-gray-100'>
-                      <Link
-                        to={`/${p.toLowerCase()}`}
-                        className={`block px-4 py-2 text-lg`}
-                        style={{color: mainColors.mainBrown}}
-                      >
-                        {p}
-                      </Link>
-                    </li>
-                  )
-                })
-              }
-              </ul>
-            </div>
-          </Link>
-
-          <Link
-            to="/services"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-            onClick={() =>{
-              if (clicked === 'services') setClicked('')
-              else setClicked('services');
-            }}
-          >
-            Services
-            <div className={` submenu
-                absolute mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden
-                transition-all duration-300 ease-in-out transform origin-top
-                ${clicked.toLowerCase() === 'services' ? 
-                'opacity-100 translate-y-0 scale-y-100' : 
-                'opacity-0 -translate-y-2 scale-y-95 pointer-events-none'
-          }
-              `}>
-              <ul>
-              {
-                services.map((p, index) => {
-                  return (
-                    <li key={index} className='text-base text-left hover:bg-gray-100'>
-                      <Link
-                        to={`/${p.toLowerCase()}`}
-                        className={`block px-4 py-2 text-lg`}
-                        style={{color: mainColors.mainBrown}}
-                      >
-                        {p}
-                      </Link>
-                    </li>
-                  )
-                })
-              }
-              </ul>
-            </div>
-          </Link>
-
-          <Link
-            to="/articles"
-            className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
-            onClick={() =>{
-              if (clicked === 'articles') setClicked('')
-              else setClicked('articles');
-            }}
-          >
-            Articles
-            <div className={` submenu
-                absolute mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden
-                transition-all duration-300 ease-in-out transform origin-top 
-                blur-none bg-white/80
-                ${clicked.toLowerCase() === 'articles' ? 
-                'opacity-100 -translate-y-0 scale-y-100' : 
-                'opacity-0 -translate-y-2 scale-y-20 pointer-events-none'
-          }
-              `}>
-              <ul>
-              {
-                articles.map((p, index) => {
-                  return (
-                    <li key={index} className='text-base text-left hover:bg-gray-100'>
-                      <Link
-                        to={`/${p.toLowerCase()}`}
-                        className={`block px-4 py-2 text-lg`}
-                        style={{color: mainColors.mainBrown}}
-                      >
-                        {p}
-                      </Link>
-                    </li>
-                  )
-                })
-              }
-              </ul>
-            </div>
-          </Link>
-
-        </div>
-  )
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: height,
+          transition: 'max-height 0.4s ease',
+        }}
+        className="overflow-hidden w-48"
+      >
+        <ul className="rounded-md shadow-lg bg-none">
+          {items.map((p, index) => (
+            <li key={index} className="text-base text-left pl-10 text-white">
+              <Link
+                to={`/${p.toLowerCase()}`}
+                className="block px-4 py-2 text-lg"
+                style={{ color: "rgb(222,222,222)"}}
+              >
+                {p}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 }
 
-export default Nav
+export default function Nav({ clicked, setClicked, services, PortCateg, articles }) {
+  return (
+    <div className="h-96 pt-2 pb-3 space-y-1 px-3 flex flex-col justify-center items-center transition duration-300 origin-left md:w-1/2">
+      <Link
+        to="/accueil"
+        className="pages px-4 py-2 rounded-md text-4xl font-medium text-white transition duration-300"
+        onClick={() => setClicked(clicked === 'accueil' ? '' : 'accueil')}
+      >
+        Accueil
+      </Link>
+
+      <Dropdown
+        title="Portfolio"
+        path="portfolio"
+        items={PortCateg}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+      <Dropdown
+        title="Services"
+        path="services"
+        items={services}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+      <Dropdown
+        title="Articles"
+        path="articles"
+        items={articles}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+    </div>
+  );
+}
