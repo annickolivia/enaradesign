@@ -27,7 +27,7 @@ module.exports = {
         revealSlide: {
           '0%': { opacity: '0', transform: 'translateX(-100px)', width: '0' },
           '30%': { opacity: '1', transform: 'translateX(50px)', width:  '25rem' },
-          '95%': { opacity: '1',transform: 'translateX(0)'},  
+          '70%': { opacity: '1',transform: 'translateX(0)', width:'25rem'},  
           '100%': { width:  '0' },
         },
         expandLine: {

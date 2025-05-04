@@ -31,19 +31,21 @@ const HeroBanner = () => {
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-20 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 z-20 bg-black bg-opacity-50"></div>
 
         {/* Content */}
-        <div className="container mx-auto py-32 relative z-30">
+        <div className="mx-auto py-32 relative z-30 md:h-[700px]">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-7xl font-light mb-12 text-white">
-              Créer <span className="font-thin">des Espaces </span><br/>
+            <h1 className="text-4xl md:text-[80px] md:h-56 md:leading-tight md:text-left font-light mb-12 text-white"
+              data-aos="fade-up"
+            >
+              Créer <span className="font-thin">des Espaces </span>
                Uniques <span className="font-thin">et Inspirants</span>
             </h1>
 
             <div className="flex flex-col md:flex-row">
               <div className="md:w-full mb-12">
-                <p className="text-lg mb-12 w-full">
+                <p className="md:text-2xl mb-12 w-full">
                   Bienvenue dans notre univers où chaque espace devient une œuvre d'art. 
                   Ensemble, transformons vos idées uniques et inspirants, alliant élégance, 
                   fonctionnalité et créativité sans limites.
@@ -51,8 +53,8 @@ const HeroBanner = () => {
               </div>
             </div>
 
-            <div className='flex flex-col md:flex-row items-center md:justify-center'>
-              <div className="flex  flex-row items-center gap-6">
+            <div className='flex flex-col md:flex-row items-center justify-between'>
+              <div className="flex  flex-row items-center gap-6 w-full">
                 <a 
                   href="/pages/services" 
                   className="flex items-center justify-between px-8 py-3 border border-none rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300"
@@ -78,7 +80,7 @@ const HeroBanner = () => {
               </div>
 
               {/* Circle Text with Scroll Down Button */}
-              <div className="relative h-24 mx-auto mt-32 md:mt-0">
+              <div className="flex md: flex-col relative h-24 w-full mt-32 md:mt-0 justify-center md:items-end">
                 <svg 
                   className="absolute inset-0 w-full h-full animate-spin-slow" 
                   viewBox="0 0 300 300" 

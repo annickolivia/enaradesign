@@ -49,7 +49,7 @@ function Footer() {
         ' style={{backgroundColor: mainColors.mainBrown}}>
       <div className='h-1/2 mb-10 flex flex-col justify-around md:w-1/2 md:h-full'>
         <Logo source='/img/logo_blanc.png'size={12}/>
-        <p className='text-white'>Contactez-nous:</p>
+        <p className='text-white' data-aos="fade-up">Contactez-nous:</p>
         <EmailBox />
       </div>
       <div className='h-1/2 flex flex-col justify-between md:items-end md:w-1/2 md:h-full '>
@@ -57,15 +57,18 @@ function Footer() {
           {
             policy.map((po, index) => {
               return (
-                <Link to={po.link} key={index} style={{textDecoration: 'none'}}>
+                <Link to={po.link} key={index} style={{textDecoration: 'none'}} data-aos="fade-left" data-aos-delay="100">
                   <i className={`text-white ${po.icon} text-4xl`} ></i>
                 </Link>
               )
             })
           }
         </div>
-        <h6 className='text-white'>Madagascar</h6>
-        <div className='text-white'>
+        <h6 
+          className='text-white'
+          data-aos="fade-up"
+        >Madagascar</h6>
+        <div className='text-white'  data-aos="fade-up" data-aos-delay="100">
           <p>Lot xxxxxxxxxxxxx Antsakaviro</p>
           <p>Antananrivo +261 32 05 802 56</p>
         </div>
