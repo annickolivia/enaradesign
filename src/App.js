@@ -16,7 +16,7 @@ function App() {
     AOS.init({
       duration: 800, // animation duration
       easing: 'ease-in-out', // animation easing
-      once: true, // whether animation should happen only once
+      once: false, // whether animation should happen only once
     });
   }, []);
   return (

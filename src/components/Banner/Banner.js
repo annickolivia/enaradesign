@@ -23,7 +23,7 @@ const HeroBanner = () => {
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-20 bg-black bg-opacity-0"></div>
+        <div className="absolute inset-0 z-20 bg-black bg-opacity-20"></div>
       </div>
     </section>
   );

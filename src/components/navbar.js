@@ -11,25 +11,31 @@ function Navbar() {
   };
 
   return (
-    <nav className="transition duration-600 w-screen fixed h-32 top-0 z-40 " 
+    <nav className="transition duration-600 w-screen absolute h-32 top-0 z-40 " 
     >
-      <div className="flex justify-between items-center h-44 px-20 md:px-32 absolute w-screen z-50 bg-transparent">
+      <div className="flex justify-between items-center h-24 px-20 md:py-28 md:px-32 absolute w-screen z-50 ">
         {/* Logo */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0"
+          data-aos="fade-right"
+        >
           <Logo source={`/img/logo_blanc.png`} size={12}/>
         </div>
 
         {/* Mobile menu button */}
-        <div className="flex items-center">
+        <div className="flex items-center"
+          data-aos="fade-left"
+        >
           <button
             onClick={toggleMenu}
             className="text-gray-700 focus:outline-none max-w-28"
             aria-label="Toggle menu"
           >
             <svg
-              className="md:w-10 md:h-10 w-8 h-8 animation-all"
+              className={`md:w-10 md:h-10 w-8 h-8 transition-all transition-discrete duration-1000 ease-in-out transform ${
+                isOpen ? 'rotate-90 ease-in-out' : 'rotate-0 ease-in-out'
+              }`}
               fill="none"
-              stroke={`white`}
+              stroke="white"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -55,9 +61,9 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`
-        flex flex-col md:flex-row items-center justify-center  md:h-screen pb-52 relative pt-64
-        transition-all duration-300 ease-in-out transform dropmenu
-        ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}   
+        flex flex-col md:flex-row items-center justify-center h-screen md:h-screen pb-52 relative pt-64
+        transition-all transition-discrete duration-1000 ease-in-out transform dropmenu
+        ${isOpen ? 'translate-y-0' : 'pointer-events-none -translate-y-full'}   
       `}
       >
         <Nav />

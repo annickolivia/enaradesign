@@ -49,15 +49,19 @@ const Portfolio = () => {
   const activeProject = projects[activeIndex];
 
   return (
-    <section className="py-10 pb-0 bg-white text-black relative">
-      <div className="container mx-auto px-4 md:px-0">
+    <section className="py-10 pb-0 bg-white text-black relative h-[screen+100px] w-screen">
+      <div className="mx-auto px-4 md:px-0 w-full">
         <div className="flex justify-between items-center mb-6 md:px-72 px-6">
-          <h2 className="text-3xl font-bold" style={{ color: mainColors.mainBrown }}>Nos Projets</h2>
+          <h2 className="text-3xl font-bold" style={{ color: mainColors.mainBrown }}
+            data-aos="fade-right"
+          >Nos Projets</h2>
         </div>
 
         <div className="flex flex-col gap-10 items-center">
           {/* /* Swiper for images only */}
-          <div className="w-2/3">
+          <div className="w-full"
+            data-aos="slide-up"
+          >
             <Swiper
               modules={[Navigation, Pagination, Mousewheel]}
               spaceBetween={30}
@@ -73,7 +77,7 @@ const Portfolio = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
-                  <div className="w-full h-[500px] flex items-center justify-center">
+                  <div className="w-screen h-[300px] md:h-[500px] flex items-center justify-center">
                     <img src={project.srcImg} alt={project.titre} className="max-h-auto max-w-full" />
                   </div>
                 </SwiperSlide>
@@ -82,21 +86,36 @@ const Portfolio = () => {
           </div>
 
           {/* /* Fixed project info */ }
-          <div className="w-full flex md:flex-row flex-col justify-arrow p-4 bg-gray-100 md:w-[800px] md:h-[175px]">
+          <div className="w-full h-[350px] flex md:flex-row flex-col justify-arrow p-4 bg-gray-100 md:w-[800px] md:h-[175px]"
+            data-aos="fade-up"
+          >
             <div className='flex justify-between flex-col md:flex-row w-full h-full items-center p-16'>
               <div>
                 <div className='flex items-center justify-between'>
-                  <div className="mb-2 text-lg font-semibold mr-8" style={{ color: mainColors.mainBrown }}>
+                  <div className="mb-2 text-lg font-semibold mr-8 md:w-[200px] transition-all transition-discrete" style={{ color: mainColors.mainBrown }}
+                    data-aos="fade-right"
+                    data-aos-delay="300"
+                  >
                     {activeProject.titre}
                   </div>
-                  <div className="text-sm text-gray-600 mb-1">{activeProject.date}</div>
+                  <div className="text-sm text-gray-600 mb-1"
+                    data-aos="fade-left"
+                    data-aos-delay="300"
+                  >{activeProject.date}</div>
                 </div>
-                <div className="text-lg font-semibold">{activeProject.categorie}</div>
+                <div className="text-lg font-semibold"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  {activeProject.categorie}
+                </div>
               </div>
               <a
                 href={activeProject.chemin}
-                className="flex items-center justify-between w-full md:w-[200px] rounded-full px-4 h-[70px] md:px-8"
+                className="flex items-center justify-between w-full md:w-[200px] rounded-full px-4 h-[50px] md:h-[70px] md:px-8"
                 style={{backgroundColor: mainColors.mainBrown}}
+                data-aos="fade-left"
+                data-aos-delay="400"
               >
                 <span className='text-white'>Voir le Projet</span>
                 <i className="fas fa-arrow-right rounded-full p-3 ml-2 bg-white font-thin" style={{color: mainColors.mainBrown}}></i>
