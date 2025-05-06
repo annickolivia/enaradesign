@@ -23,8 +23,8 @@ function App() {
   }, []);
   return (
     <div className="s">
-      <Projets />
-      {/* <Accueil /> */}
+      {/* <Projets /> */}
+      <Accueil />
     </div>
   );
 }
