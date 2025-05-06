@@ -1,8 +1,10 @@
 // App.js
 import React, {useEffect} from 'react';
-import Accueil from './views/Accueil';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ProjetsCarousel from './components/Projets/ProjetsCarousel';
+import Accueil from './views/Accueil';
+import Projets from './views/Projets';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -21,7 +23,8 @@ function App() {
   }, []);
   return (
     <div className="s">
-      <Accueil />
+      <Projets />
+      {/* <Accueil /> */}
     </div>
   );
 }

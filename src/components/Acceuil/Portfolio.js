@@ -51,7 +51,7 @@ const Portfolio = () => {
   return (
     <section className="py-10 pb-0 bg-white text-black relative h-[screen+100px] w-screen">
       <div className="mx-auto px-4 md:px-0 w-full">
-        <div className="flex justify-between items-center mb-6 md:px-72 px-6">
+        <div className="flex justify-between items-center mb-6 md:px-20 xl:px-72 px-6">
           <h2 className="text-3xl font-bold" style={{ color: mainColors.mainBrown }}
             data-aos="fade-right"
           >Nos Projets</h2>
