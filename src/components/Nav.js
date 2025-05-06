@@ -44,7 +44,7 @@ export default function Nav() {
     <>
       <div className="h-56 pt-2 pb-3 space-y-1 px-16 flex flex-row justify-center items-inline transition duration-300 origin-left">
         <Link
-          to="/accueil"
+          to="/"
           className="pages px-6 py-2 md:mr-0 rounded-md text-xl text-left font-medium text-white transition duration-300 w-[170px]"
         >
           Découvrir
@@ -76,7 +76,7 @@ export default function Nav() {
               PortCateg.map((p,index) => {
                 return(
                   <li key={index} className="py-2 hover:text-white transition duration-300">
-                    <Link to={p.chemin}>
+                    <Link to="/projets">
                       {p.nom}
                     </Link>
                   </li>
