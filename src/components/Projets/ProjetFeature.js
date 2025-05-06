@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { mainColors } from '../../styles/variables'
 import { Swiper, SwiperSlide } from "swiper/react"
+import { pagination } from 'swiper/modules'
 import { Link } from 'react-router-dom'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -8,38 +9,35 @@ import 'swiper/css/autoplay'
 
 function ProjetFeature({ activeProjet }) {
   const [images, setImages] = useState([])
+  const projectNumber = activeProjet.id.replace("projet", "");
 
-  const img = [
-    "/img/Projets/projet1/1.jpg",
-    "/img/Projets/projet1/2.jpg",
-    // "/img/Projets/projet1/3.jpg",
-    // "/img/Projets/projet1/4.jpg",
-    // "/img/Projets/projet1/5.jpg",
-    // "/img/Projets/projet1/6.jpg",
-  ]
+  const img = Array.from({ length: 2 }, (_, i) => 
+    `/img/Projets/projet${projectNumber}/${i + 1}.jpg`
+  );
 
   // useEffect(() => {
   //   // Placeholder: you could update the `img` list dynamically if needed
   // }, [activeProjet])
 
   return (
-    <div className="grid grid-cols-1 grid-rows-1 mt-16 gap-6 h-2/4 col-span-5">
-      {/* <Swiper
+    <div className="grid grid-cols-1 grid-rows-1 mt-16 gap-6 h-2/4 col-span-5"> 
+      <div className="flex flex-col justify-between h-full">
+        <Swiper
         modules={[Autoplay]}
         spaceBetween={16}
         slidesPerView={1}
-        // autoplay={{ delay: 3000, disableOnInteraction: false }}
+        pagination
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
-        className="py-8"
+        className="py-8 w-full"
       >
         {img.map((image, index) => (
           <SwiperSlide key={index}>
-            <img className="w-[700px] max-w-[400px] h-[500px] mx-auto" src="/img/Projets/projet1/1.jpg" alt={`projetImage-${index}`} />
+            <img className="h-[500px] w-full  object-cover" src={image} alt={`projetImage-${index}`} />
           </SwiperSlide>
         ))}
-      </Swiper> */}
-      <div className="flex flex-col justify-between h-full">
-        <img className="h-[500px] w-full  object-cover" src={activeProjet.imgSrc} alt="projet2"/>
+      </Swiper>
+        {/* <img className="h-[500px] w-full  object-cover" src={activeProjet.imgSrc} alt="projet2"/> */}
         <div className="py-10">
           <h4 className="h-[40px]" style={{ color: mainColors.mainBrown }}>{activeProjet.titre}</h4>
           <p className="h-20">{activeProjet.desc}</p>
@@ -60,4 +58,4 @@ function ProjetFeature({ activeProjet }) {
   )
 }
 
-export default ProjetFeature
+export default ProjetFeature;
