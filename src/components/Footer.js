@@ -69,8 +69,8 @@ function Footer() {
           data-aos="fade-up"
         >Madagascar</h6>
         <div className='text-white'  data-aos="fade-up" data-aos-delay="100">
-          <p>Lot xxxxxxxxxxxxx Antsakaviro</p>
-          <p>Antananrivo +261 32 05 802 56</p>
+          <p>Antananarivo</p>
+          <p>Analamanga</p>
         </div>
       </div>
      

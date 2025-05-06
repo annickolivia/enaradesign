@@ -8,16 +8,10 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 
 function ProjetFeature({ activeProjet }) {
-  const [images, setImages] = useState([])
   const projectNumber = activeProjet.id.replace("projet", "");
-
   const img = Array.from({ length: 2 }, (_, i) => 
     `/img/Projets/projet${projectNumber}/${i + 1}.jpg`
   );
-
-  // useEffect(() => {
-  //   // Placeholder: you could update the `img` list dynamically if needed
-  // }, [activeProjet])
 
   return (
     <div className="grid grid-cols-1 grid-rows-1 mt-16 gap-6 h-2/4 col-span-5"> 
