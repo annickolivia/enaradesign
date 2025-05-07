@@ -32,15 +32,26 @@ function Projets() {
   return (
     <div className=" px-10 py-10
     md:px-40 md:py-20 h-fit">
-        <div className="flex justify-center items-center w-full mb-10">
-            <button className="rounded-md text-white px-5" onClick={() => setSelectedCateg('tout')}
+        <div className="justify-center items-center md:w-full mb-10 hidden md:flex">
+            <button className="rounded-md text-white text-sm px-3 md:px-5" onClick={() => setSelectedCateg('tout')}
             style={{backgroundColor: mainColors.mainBrown}}
             >Tout</button>
-            <button className="px-5" onClick={() => setSelectedCateg('commercial')}>Commercial</button>
-            <button className="px-5" onClick={() => setSelectedCateg('urbain')}>Urbain</button>
-            <button className="px-5" onClick={() => setSelectedCateg('residentiel')}>Residentiel</button>
-            <button className="px-5" onClick={() => setSelectedCateg('professionel')}>Professionel</button>
+            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('commercial')}>Commercial</button>
+            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('urbain')}>Urbain</button>
+            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('residentiel')}>Residentiel</button>
+            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('professionel')}>Professionel</button>
         </div>
+        <select 
+          className="justify-center items-center md:w-full mb-10 block md:hidden text-2xl"
+          onChange={(e) => setSelectedCateg(e.target.value)}
+          value={selectedCateg}
+        >
+          <option className="text-base" value="tout">Tout</option>
+          <option className="text-base" value="commercial">Commercial</option>
+          <option className="text-base" value="urbain">Urbain</option>
+          <option className="text-base" value="residentiel">Residentiel</option>
+          <option className="text-base" value="professionel">Professionel</option>
+        </select>
         <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>
         <ProjetFeature activeProjet={activeProjet}/>
     </div>

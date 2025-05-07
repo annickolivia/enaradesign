@@ -6,7 +6,7 @@ import ProjectCard from './projectCard';
 
 function ProjetsCarousel({selectedProjet, handleCardClick}) {
   return (
-    <div className="w-full grid xl:grid-cols-5 md:grid-cols-2 md:gap-1 xl:gap-3">
+    <div className="w-full grid xl:grid-cols-5 grid-cols-3 gap-1 md:grid-cols-3 md:gap-1 xl:gap-3">
       {selectedProjet.map((project, index) => (
         <ProjectCard
           key={index}

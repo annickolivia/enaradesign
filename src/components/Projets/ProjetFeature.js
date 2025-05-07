@@ -15,7 +15,7 @@ function ProjetFeature({ activeProjet }) {
 
   return (
     <div className="grid grid-cols-1 grid-rows-1 mt-16 gap-6 h-2/4 col-span-5"> 
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col justify-between h-[950px] md:h-full">
         <Swiper
         modules={[Autoplay]}
         spaceBetween={16}
@@ -34,7 +34,7 @@ function ProjetFeature({ activeProjet }) {
         {/* <img className="h-[500px] w-full  object-cover" src={activeProjet.imgSrc} alt="projet2"/> */}
         <div className="py-10">
           <h4 className="h-[40px]" style={{ color: mainColors.mainBrown }}>{activeProjet.titre}</h4>
-          <p className="h-20">{activeProjet.desc}</p>
+          <p className="h-[200px]">{activeProjet.desc}</p>
         </div>
         <Link
         to="/"
