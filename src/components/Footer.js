@@ -45,7 +45,7 @@ function Footer() {
   return (
     <footer 
       className=' z-50 py-16 px-10 flex flex-col justify-between h-[700px]
-        md:flex-row md:py-20 md:h-[400px] md:px-72
+        md:flex-row md:py-20 md:h-[400px] md:px-20 xl:px-72
         ' style={{backgroundColor: mainColors.mainBrown}}>
       <div className='h-1/2 mb-10 flex flex-col justify-around md:w-1/2 md:h-full'>
         <Logo source='/img/logo_blanc.png'size={12}/>
@@ -69,8 +69,8 @@ function Footer() {
           data-aos="fade-up"
         >Madagascar</h6>
         <div className='text-white'  data-aos="fade-up" data-aos-delay="100">
-          <p>Lot xxxxxxxxxxxxx Antsakaviro</p>
-          <p>Antananrivo +261 32 05 802 56</p>
+          <p>Antananarivo</p>
+          <p>Analamanga</p>
         </div>
       </div>
      

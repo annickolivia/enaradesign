@@ -23,9 +23,9 @@ export default function Preloader() {
           <p className="animate-slideFade2 opacity-0 transition text-xl md:text-5xl text-white font-semibold">Créativité</p>
           <p className="animate-slideFade3 opacity-0 transition text-xl md:text-5xl text-white font-thin">Excellence</p>
         </div>
-        <div className="absolute bottom-[350px] md:bottom-[350px] flex flex-col items-center">
+        <div className="absolute bottom-[450px] md:bottom-[650px] xl:bottom-[450px] flex flex-col items-center">
             <div className='absolute bg-white h-8 max-w-64 md:max-w-72 md:h-10 animate-revealSlide'></div>
-            <p className="opacity-0 animate-expandLine text-white text-xl md:text-2xl font-thin tracking-widest">enaradesign.com</p>
+            <p className="opacity-0 animate-expandLine text-white text-xl md:text-3xl font-thin tracking-widest">enaradesign.com</p>
         </div>
       </div>
     </div>

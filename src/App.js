@@ -2,9 +2,9 @@
 import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ProjetsCarousel from './components/Projets/ProjetsCarousel';
-import Accueil from './views/Accueil';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Projets from './views/Projets';
+import Accueil from './views/Accueil';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -22,10 +22,11 @@ function App() {
     });
   }, []);
   return (
-    <div className="s">
-      {/* <Projets /> */}
-      <Accueil />
-    </div>
+
+      <Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/projets/" element={<Projets />} />
+      </Routes>
   );
 }
 
