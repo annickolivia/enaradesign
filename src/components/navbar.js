@@ -61,7 +61,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`
-        flex flex-col md:flex-row items-center justify-center h-screen md:h-screen pb-52 relative pt-64
+        flex flex-col lg:flex-col xl:flex-row items-center justify-center h-screen md:h-screen pb-52 relative pt-64
         transition-all transition-discrete duration-1000 ease-in-out transform dropmenu
         ${isOpen ? 'translate-y-0' : 'pointer-events-none -translate-y-full'}   
       `}

@@ -2,7 +2,7 @@
 import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import Projets from './views/Projets';
 import Accueil from './views/Accueil';
 

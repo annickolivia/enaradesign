@@ -13,7 +13,7 @@ export default function Preloader() {
   if (loaded) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center "
+    <div className="fixed inset-0 z-50 flex items-center justify-center h-screen w-screen"
         style={{backgroundColor: mainColors.mainBrown}}    
     >
       <div className="relative w-full h-full flex items-center justify-center">
@@ -23,9 +23,9 @@ export default function Preloader() {
           <p className="animate-slideFade2 opacity-0 transition text-xl md:text-5xl text-white font-semibold">Créativité</p>
           <p className="animate-slideFade3 opacity-0 transition text-xl md:text-5xl text-white font-thin">Excellence</p>
         </div>
-        <div className="absolute bottom-[450px] md:bottom-[650px] xl:bottom-[450px] flex flex-col items-center">
-            <div className='absolute bg-white h-8 max-w-64 md:max-w-72 md:h-10 animate-revealSlide'></div>
-            <p className="opacity-0 animate-expandLine text-white text-xl md:text-3xl font-thin tracking-widest">enaradesign.com</p>
+        <div className="absolute flex flex-col items-center">
+            <div className='absolute bg-white h-8 max-w-64 md:max-w-72 md:h-10 lg:h-10 animate-revealSlide'></div>
+            <p className="opacity-0 animate-expandLine text-white text-xl md:text-3xl lg:text-3xl xl:text-2xl font-thin tracking-widest">enaradesign.com</p>
         </div>
       </div>
     </div>

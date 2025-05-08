@@ -4,7 +4,7 @@ import { mainColors } from '../../styles/variables'
 
 function ProjectCard({path, imgPath, title, date, handleCardClick, id}) {
   return (
-        <a href={path} onClick={() => handleCardClick(id)} className="">
+        <a href={path} onClick={() => handleCardClick(id)} className="" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="300">
             <div className="border-gray-200 md:w-full xl:w-auto h-[75px] md:h-[200px]"
               style={{backgroundImage: `url(${imgPath})`, backgroundSize:"cover", backgroundPosition: "center"}}
             >
