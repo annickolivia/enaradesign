@@ -63,7 +63,7 @@ const Portfolio = () => {
             data-aos="slide-up"
           >
             <Swiper
-              modules={[Navigation, Pagination, Mousewheel]}
+              modules={[Navigation, Pagination]}
               spaceBetween={30}
               slidesPerView={1}
               navigation={{
@@ -71,7 +71,6 @@ const Portfolio = () => {
                 prevEl: ".swiper-button-prev"
               }}
               pagination={{ clickable: true }}
-              mousewheel
               speed={800}
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >

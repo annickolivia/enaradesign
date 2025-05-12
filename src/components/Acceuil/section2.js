@@ -1,0 +1,19 @@
+import React from 'react'
+import { mainColors } from '../../styles/variables'
+import { main } from 'framer-motion/client'
+
+function Section2() {
+  return (
+    <section className='px-20 pt-10 pb-52 flex flex-col items-center justify-between h-screen'>
+        <div className='flex py-10'>
+            <img className="w-30 h-auto mx-10" src="/img/about/bird_beige.png" alt="birdBeige"/>
+            <h2 className="font-thin"style={{color: mainColors.mainBrown}}><span className='font-medium'>Explorer notre </span><br></br>univers</h2>
+        </div>
+        <p className="text-justify text-2xl font-extralight">ENARA Design Agency est une agence d’aménagement d’intérieur basée à Madagascar, spécialisée également dans la sous-traitance de modélisation 3D et de visualisation architecturale.
+        Notre mission ? Donner vie à vos visions grâce à un mélange unique de créativité, d’expertise technique et de technologies de pointe. Nous menons vos projets vers l'élégance et l'innovation.
+        Que vous soyez un particulier, un professionnel ou un promoteur, nous transformons vos idées en réalités tangibles, alliant esthétique et fonctionnalité avec professionnalisme.  </p>
+    </section>
+  )
+}
+
+export default Section2
