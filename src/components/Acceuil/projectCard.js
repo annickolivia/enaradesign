@@ -8,7 +8,7 @@ function ProjectCard({imgSrc, title, desc, place}) {
       <div className='px-6 py-4'>
         <h6 style={{color:mainColors.mainBrown}}>{title}</h6>
         <p className='font-thin'>{place}</p>
-        <p className="mt-5 text-justify font-light">{desc}</p>
+        <p className="mt-5 text-justify font-light h-36 overflow-auto">{desc}</p>
         <button className="bg-gray-200 text-gray-800 p-2 float-right">Voir plus</button>
       </div>
     </div>

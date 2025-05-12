@@ -4,9 +4,9 @@ import { main } from 'framer-motion/client'
 
 function Section2() {
   return (
-    <section className='px-20 pt-10 pb-52 flex flex-col items-center justify-between h-[700px]'>
-        <div className='flex py-10'>
-            <img className="w-30 h-auto mx-10" src="/img/about/bird_beige.png" alt="birdBeige"/>
+    <section className='px-20 py-20 flex flex-col items-center justify-between h-[550px]'>
+        <div className='flex'>
+            <img className="w-24 h-auto mx-10" src="/img/about/bird_beige.png" alt="birdBeige"/>
             <h2 className="font-thin"style={{color: mainColors.mainBrown}}><span className='font-medium'>Explorer notre </span><br></br>univers</h2>
         </div>
         <p className="text-justify text-2xl font-extralight">ENARA Design Agency est une agence d’aménagement d’intérieur basée à Madagascar, spécialisée également dans la sous-traitance de modélisation 3D et de visualisation architecturale.

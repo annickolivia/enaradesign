@@ -55,7 +55,7 @@ import ProjectCard from './projectCard';
 function Section3() {
   return (
     <section className='px-20 py-10 h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
-        <h3 className='text-white font-extralight mb-10'>Projet de l'année</h3>
+        <h3 className='text-white font-extralight mb-10'>Projets de l'année</h3>
         <Swiper
              modules={[Navigation, Pagination, Mousewheel, Autoplay]}
               spaceBetween={20}
@@ -81,14 +81,6 @@ function Section3() {
             })}
         </Swiper>
         <img className="float-right" src="/img/about/numero.png" alt="numero"/>
-        <video 
-            src="/videos/mon_fichier.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-auto"
-        />
     </section>
   )
 }

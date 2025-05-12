@@ -10,7 +10,7 @@ function Section6() {
         <p className='text-7xl font-bold'>INSPIRER</p>
       </div>
       <p className='text-5xl'>conçus pour vous</p>
-      <p className='text-7xl font-bold'>ACCEUILLIR</p>
+      <p className='text-7xl font-bold'>ACCUEILLIR</p>
     </section>
   )
 }

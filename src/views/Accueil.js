@@ -10,6 +10,7 @@ import Section3 from '../components/Acceuil/section3';
 import Section4 from '../components/Acceuil/section4';
 import Section5 from '../components/Acceuil/Section5';
 import Section6 from '../components/Acceuil/section6';
+import VideoSection from '../components/Acceuil/videoSection';
 
 function Accueil() {
   return (
@@ -21,6 +22,7 @@ function Accueil() {
       <Section2 />
       {/* <Portfolio /> */}
       <Section3 />
+      <VideoSection />
       <Section4 />
       <Section5 />
       <Section6 />
