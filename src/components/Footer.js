@@ -15,7 +15,7 @@ function Footer() {
     ]
     
     const decouvrir = [
-      "à-propos",
+      "A-propos",
       "Services",
       "Contact"
     ]
@@ -51,30 +51,31 @@ function Footer() {
   
   return (
     <footer 
-      className='z-40 py-16 px-20 flex flex-col justify-between h-[600px]  items-center
+      className='z-40 py-16 px-72 flex flex-col justify-between w-screen h-[800px]  items-center
         ' style={{backgroundColor: mainColors.mainBrown}}>
-        <img className="h-52 w-48" src="/img/logo_blanc.png" alt="logoBlanc"/>
-        <div className='text-white flex flex-row justify-between'>
+        <img className="h-44 w-40" src="/img/logo_blanc.png" alt="logoBlanc"/>
+        <div className='text-white flex flex-row justify-between w-full'>
           <div className=''>
             <h5 className='text-white'>DECOUVRIR</h5>
             {
               decouvrir.map((m, index) => {return (<p key={index}>{m}</p>)} )
             }
           </div>
-          <div>
+          <div className=''>
             <h5 className='text-white'>PORTFOLIO</h5>
             {
               PortCateg.map((m, index) => {return (<p key={index}>{m}</p>)})
             }
           </div>
-          <div>
+          <div className=''>
             <h5 className='text-white'>CONTACT</h5>
             {
               contact.map((m, index) => {return (<p key={index}>{m}</p>)})
             }
           </div>
         </div>
-        <div className='flex w-2/4 justify-between'>
+        <p className='text-white text-xl'>NOUS SUIVRE</p>
+        <div className='flex w-2/4 justify-between border-t-2 pt-10'>
           {
             policy.map((po, index) => {
               return (
@@ -85,6 +86,7 @@ function Footer() {
             })
           }
         </div>
+        <p className='text-white'>COPYRIGHT ENARA DESIGN AGENCY 2025</p>
     </footer>
   )
 }

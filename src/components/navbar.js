@@ -89,7 +89,7 @@ import '../styles/navbar.scss'
   return (
     <nav className="absolute z-40 flex justify-between w-screen px-20 py-14 items-center">
       <Logo source="/img/logo_blanc.png"/>
-      <div className='text-white w-2/5 flex justify-around font-thin'>
+      <div className='text-white w-2/5 flex justify-around font-thin' data-aos="fade-left">
         {
           menu.map((m, index) => {
             return (
