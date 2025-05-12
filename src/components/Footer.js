@@ -14,14 +14,16 @@ function Footer() {
       'Urbain'
     ]
     
-    const services = [
-      "Conception",
-      "Construction"
+    const decouvrir = [
+      "à-propos",
+      "Services",
+      "Contact"
     ]
-  
-    const articles = [
-      "Blog",
-      "Formation"
+    
+    const contact = [
+      '+261 32 05 802 56',
+      'project@enaradesign.com',
+      'Antananarivo, Madagascar'
     ]
 
     const policy = [
@@ -39,20 +41,39 @@ function Footer() {
         name: 'Instagram',
         link: 'https://www.instagram.com/enara.mg/',
         icon:'fab fa-instagram'
+      },
+      {
+        name: 'Tiktok',
+        link: "#",
+        icon: 'fab fa-tiktok'
       }
     ]
   
   return (
     <footer 
-      className=' z-50 py-16 px-10 flex flex-col justify-between h-[700px]
-        md:flex-row md:py-20 md:h-[400px] md:px-20 xl:px-72
+      className='z-40 py-16 px-20 flex flex-col justify-between h-[600px]  items-center
         ' style={{backgroundColor: mainColors.mainBrown}}>
-      <div className='h-1/2 mb-10 flex flex-col justify-around md:w-1/2 md:h-full'>
-        <Logo source='/img/logo_blanc.png'size={12}/>
-        <p className='text-white' data-aos="fade-up">Contactez-nous:</p>
-        <EmailBox />
-      </div>
-      <div className='h-1/2 flex flex-col justify-between md:items-end md:w-1/2 md:h-full '>
+        <img className="h-52 w-48" src="/img/logo_blanc.png" alt="logoBlanc"/>
+        <div className='text-white flex flex-row justify-between'>
+          <div className=''>
+            <h5 className='text-white'>DECOUVRIR</h5>
+            {
+              decouvrir.map((m, index) => {return (<p key={index}>{m}</p>)} )
+            }
+          </div>
+          <div>
+            <h5 className='text-white'>PORTFOLIO</h5>
+            {
+              PortCateg.map((m, index) => {return (<p key={index}>{m}</p>)})
+            }
+          </div>
+          <div>
+            <h5 className='text-white'>CONTACT</h5>
+            {
+              contact.map((m, index) => {return (<p key={index}>{m}</p>)})
+            }
+          </div>
+        </div>
         <div className='flex w-2/4 justify-between'>
           {
             policy.map((po, index) => {
@@ -64,16 +85,6 @@ function Footer() {
             })
           }
         </div>
-        <h6 
-          className='text-white'
-          data-aos="fade-up"
-        >Madagascar</h6>
-        <div className='text-white'  data-aos="fade-up" data-aos-delay="100">
-          <p>Antananarivo</p>
-          <p>Analamanga</p>
-        </div>
-      </div>
-     
     </footer>
   )
 }

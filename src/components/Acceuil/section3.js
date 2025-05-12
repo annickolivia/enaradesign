@@ -1,7 +1,7 @@
 import React from 'react'
 import { mainColors } from '../../styles/variables';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -54,19 +54,22 @@ import ProjectCard from './projectCard';
 
 function Section3() {
   return (
-    <section className='px-20 py-10 h-[1000px]' style={{backgroundColor: mainColors.mainBrown}}>
+    <section className='px-20 py-10 h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
         <h3 className='text-white font-extralight mb-10'>Projet de l'année</h3>
         <Swiper
-             modules={[Navigation, Pagination, Mousewheel]}
-              spaceBetween={40}
+             modules={[Navigation, Pagination, Mousewheel, Autoplay]}
+              spaceBetween={20}
               slidesPerView={3}
               navigation={{
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev"
               }}
               pagination={{ clickable: true }}
-              mousewheel
+              mousewheel={{ forceToAxis: true }}  // <--- This is key!
               speed={800}
+              loop={true}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+
         >
             {projects.map((projet, index) => {
                 return (
@@ -76,6 +79,15 @@ function Section3() {
                 )
             })}
         </Swiper>
+        <img className="float-right" src="/img/about/numero.png" alt="numero"/>
+        <video 
+            src="/videos/mon_fichier.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-auto"
+        />
     </section>
   )
 }
