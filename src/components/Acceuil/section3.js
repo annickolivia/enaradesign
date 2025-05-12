@@ -69,6 +69,7 @@ function Section3() {
               speed={800}
               loop={true}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
+              className="justify-center flex"
 
         >
             {projects.map((projet, index) => {

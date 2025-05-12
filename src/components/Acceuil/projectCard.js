@@ -3,7 +3,7 @@ import { mainColors } from '../../styles/variables'
 
 function ProjectCard({imgSrc, title, desc, place}) {
   return (
-    <div className='h-[800px] w-[450px] bg-white hover:-translate-y-5 transition-all duration-700'>
+    <div className='h-[800px] w-full bg-white hover:-translate-y-5 transition-all duration-700'>
       <img className="w-full h-[500px] object-cover" src={imgSrc} alt="projectImag"/>
       <div className='px-6 py-4'>
         <h6 style={{color:mainColors.mainBrown}}>{title}</h6>
