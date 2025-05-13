@@ -1,4 +1,4 @@
 export const mainColors = {
-    mainBrown: '#C1B6A4FF',
+    mainBrown: ' ',
     lightBrown: '#C4BDB2FF',
 }
