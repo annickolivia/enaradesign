@@ -3,6 +3,8 @@ import ProjetsCarousel from '../components/Projets/ProjetsCarousel'
 import ProjetFeature from '../components/Projets/ProjetFeature'
 import { mainColors } from '../styles/variables'
 import { bdProjet } from '../components/bdProjet'
+import FiltreProjet from '../components/Projets/filtreProjet'
+import TopPortfolio from '../components/Projets/topPortfolio'
 
 function Projets() {
   const [selectedCateg, setSelectedCateg ] = useState('tout');
@@ -27,27 +29,13 @@ function Projets() {
   }, [selectedCateg, activeProjetId]);
 
   return (
-    <div className=" px-10 py-10
-    md:px-40 md:py-20 h-fit"
-    >
-        <div className="justify-center items-center md:w-full mb-10 hidden md:flex">
-            <button className="rounded-md text-white text-sm px-3 md:px-5" onClick={() => setSelectedCateg('tout')}
-            style={{backgroundColor: mainColors.mainBrown}}
-            data-aos="fade-down" data-aos-easing="ease-in-out-quart"
-            >Tout</button>
-            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('commercial')}
-             data-aos="fade-down" data-aos-delay="100" data-aos-easing="ease-in-out-quart"
-            >Commercial</button>
-            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('urbain')}
-             data-aos="fade-down" data-aos-delay="200" data-aos-easing="ease-in-out-quart"
-            >Urbain</button>
-            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('residentiel')}
-             data-aos="fade-down" data-aos-delay="300" data-aos-easing="ease-in-out-quart"
-            >Residentiel</button>
-            <button className="text-sm px-3 md:px-5" onClick={() => setSelectedCateg('professionel')}
-             data-aos="fade-down" data-aos-delay="400" data-aos-easing="ease-in-out-quart"
-            >Professionel</button>
-        </div>
+    <div>
+      <div className=" px-10 py-10
+      md:px-20 h-[600px]"
+    style={{backgroundImage: "url('/img/portfolio/portfolioBg.jpg')", backgroundPosition: 'center', backgroundSize:'cover'}}
+    >   
+        <TopPortfolio />
+        <FiltreProjet setSelectedCateg={setSelectedCateg}/>
         <select 
           className="justify-center items-center md:w-full mb-10 block md:hidden text-2xl"
           onChange={(e) => setSelectedCateg(e.target.value)}
@@ -59,8 +47,9 @@ function Projets() {
           <option className="text-base" value="residentiel">Residentiel</option>
           <option className="text-base" value="professionel">Professionel</option>
         </select>
-        <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>
-        <ProjetFeature activeProjet={activeProjet}/>
+        {/* <ProjetFeature activeProjet={activeProjet}/> */}
+    </div>
+    <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>
     </div>
   )
 }
