@@ -65,45 +65,90 @@ export const ServiceCateg = [
 ]
 
  export const projects = [
-    {
-      titre: "CHAMBRE A COUCHER",
-      date:"mars 21 2025",
-      categorie:"Design d'intérieur",
-      srcImg:"/img/portfolio/projets/cozi_bedroom.jpg",
-      chemin:"projets/chambre_a_couhcer",
-      desc:"À la recherche d’un moment d’évasion, hors de la ville ? Nous avons aménagé ce charmant hôtel à Ampefy, écrin de douceur au cœur d’un décor tropical.  ... "
-    },
-    {
-      titre: "PROJET ANAKAO TULEAR",
-      date:"Décembre 15 2024",
-      categorie:"Architecture",
-      srcImg:"/img/portfolio/projets/anakao_ext1.jpg",
-      chemin:"projets/projet_anakao_tulear",
-      desc:"À la recherche d’un moment d’évasion, hors de la ville ? Nous avons aménagé ce charmant hôtel à Ampefy, écrin de douceur au cœur d’un décor tropical.  ... "
-      
-    },
-    {
-      titre: "BUNGALOW AMPEFY",
-      date:"Janvier 12 2025",
-      categorie:"Complexe Hotêlier",
-      srcImg:"/img/portfolio/projets/ampefy_ext.jpg",
-      chemin:"projets/bungalow_ampefy",
-      desc:"À la recherche d’un moment d’évasion, hors de la ville ? Nous avons aménagé ce charmant hôtel à Ampefy, écrin de douceur au cœur d’un décor tropical.  ... "
-    },
-    {
-      titre: "SEJOUR",
-      date:"Février 05 2025",
-      categorie:"Design d'Intérieur",
-      srcImg:"/img/portfolio/projets/living_cozi.jpg",
-      chemin:"projets/sejour",
-      desc:"À la recherche d’un moment d’évasion, hors de la ville ? Nous avons aménagé ce charmant hôtel à Ampefy, écrin de douceur au cœur d’un décor tropical.  ... "
-    },
-    {
-      titre: "SALLE DE BAIN",
-      date:"Janvier 24 2025",
-      categorie:"Design d'Intérieur",
-      srcImg:"/img/portfolio/projets/bath_port.jpg",
-      chemin:"projets/salle_de_bain",
-      desc:"À la recherche d’un moment d’évasion, hors de la ville ? Nous avons aménagé ce charmant hôtel à Ampefy, écrin de douceur au cœur d’un décor tropical.  ... "
-    }
-  ];
+  {
+    titre: "CHAMBRE A COUCHER",
+    date: "mars 21 2025",
+    type: "Design d'intérieur",
+    chemin: "projets/chambre_a_couhcer",
+    categorie: "professionel",
+    bannerImage: "/img/portfolio/projets/cozi_bedroom.jpg",
+    elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
+    description:
+      "Dans un style doux et moderne, cette chambre a été conçue pour offrir une sensation de cocon et de sérénité. Chaque détail, du mobilier aux luminaires, a été pensé pour créer un espace propice au repos.",
+    architectureImages: [],
+    interiorImages: [
+      "/img/portfolio/projets/cozi_bedroom.jpg",
+      "/img/portfolio/projets/bed2.jpg"
+    ],
+    ctaText: "Vous aimez ce style ? Contactez-nous pour créer votre propre chambre de rêve."
+  },
+  {
+    titre: "PROJET ANAKAO TULEAR",
+    date: "Décembre 15 2024",
+    type: "Architecture",
+    chemin: "projets/projet_anakao_tulear",
+    categorie: "professionel",
+    bannerImage: "/img/portfolio/projets/anakao_ext1.jpg",
+    elements: ["Architecture", "Plan 3D", "Vue extérieure"],
+    description:
+      "Un projet architectural contemporain en bord de mer à Anakao, conçu pour maximiser la lumière naturelle et s’harmoniser avec l’environnement marin.",
+    architectureImages: [
+      "/img/portfolio/projets/anakao_ext1.jpg",
+      "/img/portfolio/projets/anakao_ext2.jpg"
+    ],
+    interiorImages: [],
+    ctaText: "Transformons ensemble votre terrain en un projet unique et innovant."
+  },
+  {
+    titre: "BUNGALOW AMPEFY",
+    date: "Janvier 12 2025",
+    type: "Complexe Hôtelier",
+    chemin: "projets/bungalow_ampefy",
+    categorie: "professionel",
+    bannerImage: "/img/portfolio/projets/ampefy_ext.jpg",
+    elements: ["Architecture", "Design d’intérieur", "Plan 3D", "Documentation"],
+    description:
+      "Un complexe de bungalows pour les séjours au vert. Matériaux naturels, volumes simples, et un cadre reposant pour les voyageurs en quête de tranquillité.",
+    architectureImages: [
+      "/img/portfolio/projets/ampefy_ext.jpg",
+      "/img/portfolio/projets/ampefy_ext2.jpg",
+      "/img/portfolio/projets/ampefy_ext3.jpg"
+    ],
+    interiorImages: ["/img/portfolio/projets/ampefy_room.jpg"],
+    ctaText: "Vous souhaitez développer un projet touristique ? Discutons-en !"
+  },
+  {
+    titre: "SEJOUR",
+    date: "Février 05 2025",
+    type: "Design d'intérieur",
+    chemin: "projets/sejour",
+    categorie: "professionel",
+    bannerImage: "/img/portfolio/projets/living_cozi.jpg",
+    elements: ["Design d’intérieur", "Mobilier sur mesure", "Aménagement"],
+    description:
+      "Un salon élégant et fonctionnel, pensé pour accueillir et partager. Les matériaux nobles et les tons neutres créent une atmosphère conviviale et chic.",
+    architectureImages: [],
+    interiorImages: [
+      "/img/portfolio/projets/living_cozi.jpg",
+      "/img/portfolio/projets/living2.jpg"
+    ],
+    ctaText: "Envie d’un séjour sur mesure ? Nous vous accompagnons de A à Z."
+  },
+  {
+    titre: "SALLE DE BAIN",
+    date: "Janvier 24 2025",
+    type: "Design d'intérieur",
+    chemin: "projets/salle_de_bain",
+    categorie: "professionel",
+    bannerImage: "/img/portfolio/projets/bath_port.jpg",
+    elements: ["Design d’intérieur", "Décoration", "Optimisation d’espace"],
+    description:
+      "Salle de bain contemporaine et épurée. Les teintes naturelles et le bois apportent chaleur et modernité à cet espace bien-être.",
+    architectureImages: [],
+    interiorImages: [
+      "/img/portfolio/projets/bath_port.jpg",
+      "/img/portfolio/projets/bath2.jpg"
+    ],
+    ctaText: "Un petit espace ? Nous optimisons chaque mètre carré avec style."
+  }
+];

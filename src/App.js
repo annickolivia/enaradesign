@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import {Routes, Route } from 'react-router-dom';
 import Projets from './views/Projets';
 import Accueil from './views/Accueil';
+import ProjectDetails from './components/Projets/ProjetFeature';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/projets/" element={<Projets />} />
+        <Route path="projets/:id" element={<ProjectDetails />} />
       </Routes>
   );
 }

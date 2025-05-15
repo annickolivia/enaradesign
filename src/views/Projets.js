@@ -1,28 +1,25 @@
-import React,{ useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import ProjetsCarousel from '../components/Projets/ProjetsCarousel'
-import ProjetFeature from '../components/Projets/ProjetFeature'
-import { mainColors } from '../styles/variables'
-import { bdProjet } from '../components/bdProjet'
+import { projects } from '../components/bdProjet'
 import FiltreProjet from '../components/Projets/filtreProjet'
 import TopPortfolio from '../components/Projets/topPortfolio'
 
 function Projets() {
   const [selectedCateg, setSelectedCateg ] = useState('tout');
-  const [selectedProjet, setSelectedProjet ] = useState(bdProjet);
+  const [selectedProjet, setSelectedProjet ] = useState(projects);
   const [activeProjetId, setActiveProjetId] = useState("");
-  const [activeProjet, setActiveProjet] = useState(bdProjet[0]);
+  const [activeProjet, setActiveProjet] = useState(projects[0]);
 
   const handleCardClick = (projetId) => {
     setActiveProjetId(projetId);
-    console.log(activeProjetId)
   };
 
   useEffect(() => {
     const filtered = selectedCateg === 'tout'
-      ? bdProjet
-      : bdProjet.filter((projet) => projet.categorie === selectedCateg);
+      ? projects
+      : projects.filter((projet) => projet.categorie === selectedCateg);
     setSelectedProjet(filtered);
-    const found = bdProjet.find((projet) => projet.id === activeProjetId);
+    const found = projects.find((projet) => projet.id === activeProjetId);
     if (found) {
       setActiveProjet(found);
     }
