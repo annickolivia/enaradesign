@@ -77,8 +77,8 @@ export const ServiceCateg = [
       "Dans un style doux et moderne, cette chambre a été conçue pour offrir une sensation de cocon et de sérénité. Chaque détail, du mobilier aux luminaires, a été pensé pour créer un espace propice au repos.",
     architectureImages: [],
     interiorImages: [
-      "/img/portfolio/projets/cozi_bedroom.jpg",
-      "/img/portfolio/projets/bed2.jpg"
+      "/img/Projets/projet1/1.jpg",
+      "/img/Projets/projet1/2.jpg"
     ],
     ctaText: "Vous aimez ce style ? Contactez-nous pour créer votre propre chambre de rêve."
   },
@@ -93,8 +93,8 @@ export const ServiceCateg = [
     description:
       "Un projet architectural contemporain en bord de mer à Anakao, conçu pour maximiser la lumière naturelle et s’harmoniser avec l’environnement marin.",
     architectureImages: [
-      "/img/portfolio/projets/anakao_ext1.jpg",
-      "/img/portfolio/projets/anakao_ext2.jpg"
+      "/img/Projets/projet2/1.jpg",
+      "/img/Projets/projet2/2.jpg"
     ],
     interiorImages: [],
     ctaText: "Transformons ensemble votre terrain en un projet unique et innovant."
@@ -110,9 +110,8 @@ export const ServiceCateg = [
     description:
       "Un complexe de bungalows pour les séjours au vert. Matériaux naturels, volumes simples, et un cadre reposant pour les voyageurs en quête de tranquillité.",
     architectureImages: [
-      "/img/portfolio/projets/ampefy_ext.jpg",
-      "/img/portfolio/projets/ampefy_ext2.jpg",
-      "/img/portfolio/projets/ampefy_ext3.jpg"
+     "/img/Projets/projet3/1.jpg",
+      "/img/Projets/projet3/2.jpg"
     ],
     interiorImages: ["/img/portfolio/projets/ampefy_room.jpg"],
     ctaText: "Vous souhaitez développer un projet touristique ? Discutons-en !"
@@ -129,8 +128,8 @@ export const ServiceCateg = [
       "Un salon élégant et fonctionnel, pensé pour accueillir et partager. Les matériaux nobles et les tons neutres créent une atmosphère conviviale et chic.",
     architectureImages: [],
     interiorImages: [
-      "/img/portfolio/projets/living_cozi.jpg",
-      "/img/portfolio/projets/living2.jpg"
+      "/img/Projets/projet4/1.jpg",
+      "/img/Projets/projet4/2.jpg"
     ],
     ctaText: "Envie d’un séjour sur mesure ? Nous vous accompagnons de A à Z."
   },
@@ -146,8 +145,8 @@ export const ServiceCateg = [
       "Salle de bain contemporaine et épurée. Les teintes naturelles et le bois apportent chaleur et modernité à cet espace bien-être.",
     architectureImages: [],
     interiorImages: [
-      "/img/portfolio/projets/bath_port.jpg",
-      "/img/portfolio/projets/bath2.jpg"
+     "/img/Projets/projet2/3.jpg",
+      "/img/Projets/projet2/4.jpg"
     ],
     ctaText: "Un petit espace ? Nous optimisons chaque mètre carré avec style."
   }

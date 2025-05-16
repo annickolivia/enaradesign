@@ -29,8 +29,8 @@ function Projets() {
     <div>
       <div className=" px-10 py-10
       md:px-20 h-[600px]"
-    style={{backgroundImage: "url('/img/portfolio/portfolioBg.jpg')", backgroundPosition: 'center', backgroundSize:'cover'}}
-    >   
+      style={{backgroundImage: "url('/img/portfolio/portfolioBg.jpg')", backgroundPosition: 'center', backgroundSize:'cover'}}
+      >   
         <TopPortfolio />
         <FiltreProjet setSelectedCateg={setSelectedCateg}/>
         <select 
@@ -45,7 +45,7 @@ function Projets() {
           <option className="text-base" value="professionel">Professionel</option>
         </select>
         {/* <ProjetFeature activeProjet={activeProjet}/> */}
-    </div>
+      </div>
     <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>
     </div>
   )

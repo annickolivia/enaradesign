@@ -12,10 +12,9 @@ function ProjetsCarousel({selectedProjet, handleCardClick}) {
       <h4  className="pb-10 font-normal" style={{color: mainColors.mainBrown}}>NOS PROJETS</h4>
       <div className="w-full grid md:grid-cols-2 gap-16">
         {selectedProjet.map((project, index) => (
-          <Link to ={`/projets/${project.titre.replace(/\s+/g, "")}`}>
+          <Link to ={`/projets/${project.titre.replace(/\s+/g, "")}`} key={index}>
             <ProjectCard
-              key={index}
-              imgPath={project.imgSrc}
+              bannerImage={project.bannerImage}
               title={project.titre}
               date={project.date}
               id={project.id}

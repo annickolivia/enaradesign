@@ -19,7 +19,7 @@ import '../styles/navbar.scss';
   const [activeSousMenu, setActiveSousMenu] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const portfolio = [
+  const menu = [
     'A propos',
     'Services',
     'Portfolio',
@@ -59,15 +59,19 @@ import '../styles/navbar.scss';
       `} 
       >
         {
-          portfolio.map((m, index) => {
+          menu.map((m, index) => {
             return (
               <Link 
-              className="relative font-light after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+                className="relative font-light after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
                 onMouseOver={() => {
                   setIsMenuOpen(true);
                   handleHoverChange(m)
                 }}
-                to={m} 
+                onClick={() => {
+                  setIsMenuOpen(true);
+                  handleHoverChange(m)
+                }}
+                // to={m} 
                 key={index}
               >{m}</Link>
             )
@@ -136,7 +140,7 @@ function SousMenu ({activeSousMenu, activeMenu}) {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <Link to={a.chemin} className="text-left font-extralight">
+                <Link to='/projets' className="text-left font-extralight">
                   {a.nom}
                 </Link>
               </motion.li>
@@ -163,7 +167,9 @@ function SousMenu ({activeSousMenu, activeMenu}) {
             {projects.map((projet, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <ProjectCard imgSrc={projet.srcImg} place="Madagascar" title={projet.titre} h={150}/>
+                      <Link to={`projets/${projet.titre.replace(/\s+/g, "")}`} className='h-[500px]'>
+                        <ProjectCard imgSrc={projet.bannerImage} place="Madagascar" title={projet.titre}/>
+                      </Link>
                     </SwiperSlide>
                 )
             })}

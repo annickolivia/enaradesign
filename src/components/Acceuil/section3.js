@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import ProjectCard from './projectCard';
 import { projects } from '../bdProjet';
+import { Link } from 'react-router-dom';
 
 function Section3() {
   return (
@@ -33,7 +34,9 @@ function Section3() {
             {projects.map((projet, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <ProjectCard imgSrc={projet.srcImg} place="Madagascar" title={projet.titre} desc={projet.desc} h={800}/>
+                      <Link to={`projets/${projet.titre.replace(/\s+/g, "")}`} className='h-[800px]'>
+                        <ProjectCard imgSrc={projet.bannerImage} place="Madagascar" title={projet.titre}/>
+                      </Link>
                     </SwiperSlide>
                 )
             })}

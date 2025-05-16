@@ -34,7 +34,10 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity:'1' },
         },
-    },
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
   },
   plugins: [],
 }

@@ -2,7 +2,7 @@
 import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import {Routes, Route } from 'react-router-dom';
+import {Routes, Route, useLocation } from 'react-router-dom';
 import Projets from './views/Projets';
 import Accueil from './views/Accueil';
 import ProjectDetails from './components/Projets/ProjetFeature';
@@ -14,6 +14,13 @@ import 'swiper/css';
 import './styles/style.scss'
 
 function App() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   useEffect(() => {
     // Initialize AOS
     AOS.init({
