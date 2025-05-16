@@ -54,23 +54,23 @@ function Footer() {
       className='z-40 py-16 px-72 flex flex-col justify-between w-screen h-[800px]  items-center
         'style={{backgroundColor: mainColors.mainBrown}}>
         <img className="h-44 w-40" src="/img/logo_blanc.png" alt="logoBlanc"/>
-        <div className='text-white flex flex-row justify-between w-full'>
-          <div className=''>
-            <h5 className='text-white'>DECOUVRIR</h5>
+        <div className='text-white grid grid-cols-5 justify-between w-full'>
+          <div className='text-left flex flex-col items-center'>
+            <h5 className='text-white mb-2'>DECOUVRIR</h5>
             {
-              decouvrir.map((m, index) => {return (<p key={index}>{m}</p>)} )
+              decouvrir.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)} )
             }
           </div>
-          <div className=''>
-            <h5 className='text-white'>PORTFOLIO</h5>
+          <div className='text-left flex flex-col col-start-3 items-center'>
+            <h5 className='text-white mb-2'>PORTFOLIO</h5>
             {
-              PortCateg.map((m, index) => {return (<p key={index}>{m}</p>)})
+              PortCateg.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)})
             }
           </div>
-          <div className=''>
-            <h5 className='text-white'>CONTACT</h5>
+          <div className='flex flex-col items-center col-start-5'>
+            <h5 className='text-white mb-2'>CONTACT</h5>
             {
-              contact.map((m, index) => {return (<p key={index}>{m}</p>)})
+              contact.map((m, index) => {return (<p key={index} className='text-left '>{m}</p>)})
             }
           </div>
         </div>

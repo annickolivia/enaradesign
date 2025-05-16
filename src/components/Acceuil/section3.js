@@ -14,20 +14,19 @@ function Section3() {
     <section className='px-20 py-10 h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
         <h3 className='text-white font-extralight mb-10'
           data-aos="fade-up"
-        >Projets de l'année</h3>
+        >Projets de l'<span className="font-normal">année</span></h3>
         <Swiper
-             modules={[Navigation, Pagination, Mousewheel, Autoplay]}
+             modules={[Navigation, Mousewheel, Autoplay]}
               spaceBetween={20}
               slidesPerView={3}
               navigation={{
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev"
               }}
-              pagination={{ clickable: true }}
               mousewheel={{ forceToAxis: true }}  // <--- This is key!
-              speed={800}
+              speed={1000}
               loop={true}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: 3000, disableOnInteraction: true }}
               className="justify-center flex"
 
         >
@@ -40,6 +39,11 @@ function Section3() {
                     </SwiperSlide>
                 )
             })}
+
+            <div className="swiper-button-prev text-white absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer">
+            </div>
+            <div className="swiper-button-next text-white absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer">
+            </div>
         </Swiper>
         <img className="float-right" src="/img/about/numero.png" alt="numero"/>
     </section>

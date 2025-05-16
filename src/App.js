@@ -12,6 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'swiper/css';
 import './styles/style.scss'
+import Devis from './views/Devis';
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/projets/" element={<Projets />} />
-        <Route path="projets/:id" element={<ProjectDetails />} />
+        <Route path="/projets/:id" element={<ProjectDetails />} />
+        <Route path="/devis" element={<Devis />} />
       </Routes>
   );
 }

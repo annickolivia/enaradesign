@@ -1,83 +1,31 @@
-// import React from 'react'
-// import { mainColors } from '../../styles/variables'
-// import { Swiper, SwiperSlide } from "swiper/react"
-// import { Link } from 'react-router-dom'
-// import { Autoplay } from 'swiper/modules'
-// import 'swiper/css'
-// import 'swiper/css/autoplay'
-
-// function ProjetFeature({ activeProjet }) {
-//   const projectNumber = activeProjet.id.replace("projet", "");
-//   const img = Array.from({ length: 2 }, (_, i) => 
-//     `/img/Projets/projet${projectNumber}/${i + 1}.jpg`
-//   );
-
-//   return (
-//     <div className="grid grid-cols-1 grid-rows-1 mt-16 gap-6 h-2/4 col-span-5"> 
-//       <div className="flex flex-col justify-between h-[950px] md:h-full">
-//         <Swiper
-//         modules={[Autoplay]}
-//         spaceBetween={16}
-//         slidesPerView={1}        
-//         autoplay={{ delay: 3000, disableOnInteraction: false }}
-//         loop={true}
-//         className="py-8 w-full"
-//         data-aos="zoom-out"
-//       >
-//         {img.map((image, index) => (
-//           <SwiperSlide key={index}>
-//             <img className="h-[500px] w-full  object-cover" src={image} alt={`projetImage-${index}`} />
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-//         {/* <img className="h-[500px] w-full  object-cover" src={activeProjet.imgSrc} alt="projet2"/> */}
-//         <div className="py-10">
-//           <h4 className="h-[40px]" data-aos="fade-up" style={{ color: mainColors.mainBrown }}>{activeProjet.titre}</h4>
-//           <p className="h-[200px]" data-aos="fade-up" data-aos-delay="200">{activeProjet.desc}</p>
-//         </div>
-//         <Link
-//         to="/"
-//         >
-//           <button
-//             className="h-12 w-full mt-5 text-white font-extralight"
-//             style={{ backgroundColor: mainColors.mainBrown }}
-//             data-aos="fade-down"
-//           >
-//             <i className='fas fa-arrow-left mr-10'/>
-//             Revenir à l'accueil
-//           </button>
-//         </Link>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default ProjetFeature;
 import { useParams, Link } from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
+import React, {use, useEffect, useState} from 'react';
 import { projects } from '../bdProjet';
 import FiltreProjet from '../Projets/filtreProjet';
 import TopPortfolio from '../Projets/topPortfolio';
 import { mainColors } from '../../styles/variables';
 import DevisBtn from '../../components/devisBtn';
 import { motion, AnimatePresence } from 'framer-motion';
+import Devis from '../../views/Devis';
 
 const ProjectDetails = () => {
-
-  const { id } = useParams();
-
-  const project = projects.find((p) => p.titre.replace(/\s+/g, "") === id);
-  
-  // scrool detect
+  const [scale, setScale] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
-
+  const [showDevis, setShowDevis] = useState(false);
+  const { id } = useParams();
+  const project = projects.find((p) => p.titre.replace(/\s+/g, "") === id);
+  // scrool detect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > window.innerHeight/2) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
+
+      const scrollY = window.scrollY;
+      const newScale = 1 + scrollY * 0.0001; // Ajuste le facteur selon l'effet désiré
+      setScale(newScale);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -89,14 +37,14 @@ const ProjectDetails = () => {
   return (
     <div className="relative">
       {/* boutton revenir a accueil */}
+      <AnimatePresence mode="wait">
       {
         isVisible && (
-        <AnimatePresence mode="wait">
-        <motion.div className='fixed z-50 `h-[400px] top-1/2 transform -translate-y-1/2 transition-all duration-500'
+        <motion.div className='fixed z-50 `h-[400px] top-1/2 transform -translate-y-1/2'
           initial={{ x: -50 }}
           animate={{ x: 0 }}
           exit={{ x: -50 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: .8 , ease: "easeInOut" }}
         >
         <Link 
           to="/"
@@ -115,19 +63,23 @@ const ProjectDetails = () => {
           <span style={{ writingMode: 'vertical-rl' }}>Revenir au Portfolio</span>
         </Link>
       </motion.div>
-      </AnimatePresence>
-
         )
       }
-
-      <div className='relative h-screen'
-       style={{backgroundImage: `url(${project.bannerImage})`, backgroundPosition: 'center', backgroundSize:'cover'}}
+      </AnimatePresence>
+      <div className='relative h-screen  overflow-hidden'
+        style={{
+        backgroundImage: `url(${project.bannerImage})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        transform: `scale(${scale})`,
+        transition: 'transform 0.1s linear',
+      }}
       >
         <div className="relative px-20 py-10 h-screen z-40">   
-          <TopPortfolio />
+          <TopPortfolio setShowDevis={setShowDevis}/>
           <div className='relative text-white h-full flex flex-col justify-end py-44'>
-            <h2 className='text-white font-light'>{project.titre}</h2>
-            <p className='text-4xl font-extralight'>{project.type}</p>
+            <h2 className='text-white font-light' data-aos="fade-up">{project.titre}</h2>
+            <p className='text-4xl font-thin' data-aos="fade-up" data-aos-delay="300">{project.type}</p>
           </div>
         </div>
         <div className="absolute z-20 bg-black bg-opacity-40 w-screen h-screen top-0"></div>
@@ -141,17 +93,17 @@ const ProjectDetails = () => {
           <div className='col-span-3 h-[1px]'
             style = {{backgroundColor: mainColors.mainBrown}}
           ></div>
-          <ul className="flex flex-col gap-4 text-sm tracking-widest col-start-2 mt-5 col-span-2 pb-10"
+              {/* Description */}
+          <div className="text-justify text-gray-700 text-md leading-relaxed pr-16 pt-5">
+            {project.description}
+          </div>
+          <ul className="flex flex-col gap-4 text-sm tracking-widest  mt-5  pb-10"
            style={{color: mainColors.mainBrown}}
           >
             {project.elements.map((item, index) => (
               <li key={index} className="text-left text-lg">{String(index + 1).padStart(2, '0')} - {item}</li>
             ))}
           </ul>
-          {/* Description */}
-          <div className="text-justify text-gray-700 text-2xl leading-relaxed col-span-2 ">
-            {project.description}
-          </div>
         </div>
       </div>
 
@@ -195,6 +147,12 @@ const ProjectDetails = () => {
       <div className='px-20 py-10'>
           <DevisBtn />
       </div>
+      
+    <AnimatePresence mode="wait">
+      {
+        showDevis && (<Devis />)
+      } 
+    </AnimatePresence>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { mainColors } from '../../styles/variables'
 
 function ProjectCard({imgSrc, title, desc="", place , h}) {
   return (
-    <div className={`h-full w-full bg-white hover:-translate-y-5 transition-all duration-700`}
+    <div className={`h-[650px] w-full bg-white hover:-translate-y-5 transition-all duration-700`}
       data-aos="fade-up"
     >
       <img className="w-full h-[500px] object-cover" src={imgSrc} alt="projectImag"/>

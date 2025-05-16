@@ -49,7 +49,7 @@ import '../styles/navbar.scss';
     > 
       <SousMenu activeSousMenu={activeSousMenu} activeMenu={activeMenu}/>
     </div>
-    <nav className="absolute z-40 flex justify-between w-screen px-20 py-4 items-center">
+    <nav className="absolute z-40 flex justify-between w-screen px-20 py-10 items-center">
       <Logo source={` ${isMenuOpen ? '/img/logo_beige.png' : '/img/logo_blanc.png'}`} className=" transition-all duration-500 transition-discrete"/>
       <div className={` absolute left-1/2 hover:scale-[1.3] transition duration-500 ${isMenuOpen ? 'block' : 'hidden'}`} onClick={() => setIsMenuOpen(false)}>
         <i className={`fas fa-xmark text-2xl font-light text-gray-600`}/>

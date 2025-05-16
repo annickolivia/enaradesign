@@ -11,7 +11,7 @@ function VideoSection() {
             // playsInline 
             className="w-full h-auto"
         />
-        <h2 className='relative text-gray-600 bottom-40 px-20 font-extralight'><span className='font-semibold'>Notre </span> approche</h2>
+        <h2 className='relative text-white bottom-40 px-20 font-extralight'><span className='font-semibold'>Notre </span> approche</h2>
     </div>
   )
 }
