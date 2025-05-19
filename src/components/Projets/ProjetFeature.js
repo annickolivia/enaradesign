@@ -75,28 +75,35 @@ const ProjectDetails = () => {
         transition: 'transform 0.1s linear',
       }}
       >
-        <div className="relative px-20 py-10 h-screen z-40">   
+        <div className="relative px-6 md:px-20 py-10 h-screen z-40">   
           <TopPortfolio setShowDevis={setShowDevis}/>
           <div className='relative text-white h-full flex flex-col justify-end py-44'>
-            <h2 className='text-white font-light' data-aos="fade-up">{project.titre}</h2>
-            <p className='text-4xl font-thin' data-aos="fade-up" data-aos-delay="300">{project.type}</p>
+            <h2 className='text-white font-light text-2xl md:text-5xl' data-aos="fade-up">{project.titre}</h2>
+            <p className='text-xl md:text-4xl font-thin' data-aos="fade-up" data-aos-delay="300">{project.type}</p>
           </div>
         </div>
         <div className="absolute z-20 bg-black bg-opacity-40 w-screen h-screen top-0"></div>
       </div>
       {/* Elements */}
-      <div className="text-center py-20 px-20">
-        <div className='grid grid-cols-2'
+      <div className="text-center py-10 md:py-20 px-6 md:px-20">
+        <div className='grid md:grid-cols-2 grid-cols-1'
         >
-          <h2 className='text-lg font-light flex justify-start' style={{color: mainColors.mainBrown}}>{project.titre}</h2>
-          <h2 className="text-lg font-light mb-2 flex justify-start" style={{color: mainColors.mainBrown}}>ÉLEMENTS</h2>
-          <div className='col-span-3 h-[1px]'
+          <h2 className='text-lg font-light flex justify-start  md:mb-0 mb-2 c' style={{color: mainColors.mainBrown}}>{project.titre}</h2>
+          <div className='md:hidden col-span-1 md:col-span-3 h-[1px]'
+            style = {{backgroundColor: mainColors.mainBrown}}
+          ></div>
+          <h2 className="text-lg font-light mb-2 justify-start hidden md:flex" style={{color: mainColors.mainBrown}}>ÉLEMENTS</h2>
+          <div className='col-span-1 md:col-span-3 h-[1px] md:block hidden'
             style = {{backgroundColor: mainColors.mainBrown}}
           ></div>
               {/* Description */}
-          <div className="text-justify text-gray-700 text-md leading-relaxed pr-16 pt-5">
+          <div className="text-justify text-gray-700 text-md leading-relaxed pr-16 pt-5 mb-4 md:mb-0">
             {project.description}
           </div>
+          <h2 className="text-lg font-light mb-2 justify-start flex md:hidden" style={{color: mainColors.mainBrown}}>ÉLEMENTS</h2>
+            <div className='md:hidden col-span-1 md:col-span-3 h-[1px]'
+            style = {{backgroundColor: mainColors.mainBrown}}
+          ></div>
           <ul className="flex flex-col gap-4 text-sm tracking-widest  mt-5  pb-10"
            style={{color: mainColors.mainBrown}}
           >
@@ -125,7 +132,7 @@ const ProjectDetails = () => {
       {/* Design intérieur */}
       {project.interiorImages.length > 0 && (
         <section className=''>
-          <div className='flex items-center justify-between py-10 px-20 '>
+          <div className='flex items-center justify-between py-10 px-6 md:px-20 '>
               <h3 className="text-2xl font-normal" style={{color:mainColors.mainBrown}}>Design d’intérieur</h3>
               <div className='h-[1px] w-4/5' style={{backgroundColor: mainColors.mainBrown}}></div>
           </div>
@@ -139,12 +146,12 @@ const ProjectDetails = () => {
 
       {/* CTA */}
       {project.ctaText && (
-        <div className="text-left mt-8 px-20 text-gray-700 text-lg">
+        <div className="text-left mt-8 px-6 md:px-20 text-gray-700 text-lg">
           {project.ctaText}
         </div>
       )}
       {/* bouton pour devis */}
-      <div className='px-20 py-10'>
+      <div className='px-6 md:px-20 py-10'>
           <DevisBtn />
       </div>
       

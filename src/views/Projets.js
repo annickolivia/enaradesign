@@ -27,23 +27,24 @@ function Projets() {
 
   return (
     <div>
-      <div className=" px-10 py-10
-      md:px-20 h-[600px]"
+      <div className=" px-6 py-10
+      md:px-20 h-screen md:h-[600px]"
       style={{backgroundImage: "url('/img/portfolio/portfolioBg.jpg')", backgroundPosition: 'center', backgroundSize:'cover'}}
       >   
         <TopPortfolio />
         <FiltreProjet setSelectedCateg={setSelectedCateg}/>
         <select 
-          className="justify-center items-center md:w-full mb-10 block md:hidden text-2xl"
+          className="justify-center font-light items-center md:w-full mb-10 block md:hidden bg-transparent text-white text-2xl w-full"
           onChange={(e) => setSelectedCateg(e.target.value)}
           value={selectedCateg}
         >
-          <option className="text-base" value="tout">Tout</option>
-          <option className="text-base" value="commercial">Commercial</option>
-          <option className="text-base" value="urbain">Urbain</option>
-          <option className="text-base" value="residentiel">Residentiel</option>
-          <option className="text-base" value="professionel">Professionel</option>
+          <option className="text-base text-gray-900" value="tout">Tout</option>
+          <option className="text-base text-gray-900" value="commercial">Commercial</option>
+          <option className="text-base text-gray-900" value="urbain">Urbain</option>
+          <option className="text-base text-gray-900" value="residentiel">Residentiel</option>
+          <option className="text-base text-gray-900" value="professionel">Professionel</option>
         </select>
+
         {/* <ProjetFeature activeProjet={activeProjet}/> */}
       </div>
     <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>
