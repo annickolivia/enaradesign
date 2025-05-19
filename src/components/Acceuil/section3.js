@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 function Section3() {
   return (
-    <section className='px-20 py-10 h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
+    <section className='px-6 md:px-20 py-10 h-fit md:h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
         <h3 className='text-white font-extralight mb-10'
           data-aos="fade-up"
         >Projets de l'<span className="font-normal">année</span></h3>
@@ -22,6 +22,17 @@ function Section3() {
               navigation={{
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev"
+              }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1, // 👈 mobile (0px and up)
+                },
+                768: {
+                  slidesPerView: 2, // 👈 tablets (optional)
+                },
+                1024: {
+                  slidesPerView: 3, // 👈 desktops
+                },
               }}
               mousewheel={{ forceToAxis: true }}  // <--- This is key!
               speed={1000}
@@ -45,7 +56,7 @@ function Section3() {
             <div className="swiper-button-next text-white absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer">
             </div>
         </Swiper>
-        <img className="float-right" src="/img/about/numero.png" alt="numero"/>
+        <img className="float-right w-14 md:w-auto" src="/img/about/numero.png" alt="numero"/>
     </section>
   )
 }

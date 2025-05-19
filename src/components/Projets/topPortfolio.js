@@ -3,7 +3,7 @@ import DevisBtn from './devisBtn';
 
 function TopPortfolio({setShowDevis}) {
   return (
-    <div className='grid grid-cols-3 items-center h-[60px] pb-24 mb-6 border-b-[1px] border-white relative z-30'
+    <div className='grid grid-cols-3 items-center scale-50 transform h-[60px] pb-24 mb-6 border-b-[1px] border-white relative z-30'
       data-aos = "fade-up"
     >
         <img className='w-20 h-20' src="/img/logo_blanc.png"

@@ -51,30 +51,30 @@ function Footer() {
   
   return (
     <footer 
-      className='z-40 py-16 px-72 flex flex-col justify-between w-screen h-[800px]  items-center
+      className='z-40 py-16 px-6 md:px-20 flex flex-col w-screen justify-between lg:h-[800px] h-fit items-center
         'style={{backgroundColor: mainColors.mainBrown}}>
-        <img className="h-44 w-40" src="/img/logo_blanc.png" alt="logoBlanc"/>
-        <div className='text-white grid grid-cols-5 justify-between w-full'>
+        <img className="h-20 w-16 md:h-44 md:w-40 my-5 md:my-0" src="/img/logo_blanc.png" alt="logoBlanc"/>
+        <div className='text-white grid grid-cols-1 md:grid-cols-5 justify-between w-full space-y-5 md:space-y-0'>
           <div className='text-left flex flex-col items-center'>
             <h5 className='text-white mb-2'>DECOUVRIR</h5>
             {
               decouvrir.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)} )
             }
           </div>
-          <div className='text-left flex flex-col col-start-3 items-center'>
+          <div className='text-left flex flex-col md:col-start-3 items-center'>
             <h5 className='text-white mb-2'>PORTFOLIO</h5>
             {
               PortCateg.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)})
             }
           </div>
-          <div className='flex flex-col items-center col-start-5'>
+          <div className='flex flex-col items-center md:col-start-5'>
             <h5 className='text-white mb-2'>CONTACT</h5>
             {
               contact.map((m, index) => {return (<p key={index} className='text-left '>{m}</p>)})
             }
           </div>
         </div>
-        <p className='text-white text-xl'>NOUS SUIVRE</p>
+        <p className='text-white text-xl py-5 md:py-0'>NOUS SUIVRE</p>
         <div className='flex w-2/4 justify-between border-t-2 pt-10'>
           {
             policy.map((po, index) => {
@@ -86,7 +86,7 @@ function Footer() {
             })
           }
         </div>
-        <p className='text-white'>COPYRIGHT ENARA DESIGN AGENCY 2025</p>
+        <p className='text-white py-3 md:py-0'>COPYRIGHT ENARA DESIGN AGENCY 2025</p>
     </footer>
   )
 }

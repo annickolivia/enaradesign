@@ -25,11 +25,11 @@ const text = [
 
 function Section4() {
   return (
-    <section className='h-[900px] px-20 py-10 grid grid-cols-2'>
+    <section className='h-fit lg:h-[900px] px-6 md:px-20 pb-10 grid grid-cols-1 lg:grid-cols-2'>
       {
         text.map((m, index) => {
           return (
-            <div key={index} className='w-[500px] text-justify' > 
+            <div key={index} className=' w-auto py-5  lg:py-0 lg:w-[350px] xl:w-[500px] text-justify' > 
               <h4 className='text-gray-600 mb-3'>{index + 1 }  { m.title}</h4>
               <p>{m.desc}</p>
             </div>

@@ -1,9 +1,8 @@
-import react, {useState} from 'react'
+import React, { useState } from 'react';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
-import { PortCateg, ServiceCateg } from './bdProjet';
+import { PortCateg, ServiceCateg, projects } from './bdProjet';
 import ProjectCard from './Acceuil/projectCard';
-import { projects } from './bdProjet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Autoplay } from 'swiper/modules';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,94 +11,155 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../styles/navbar.scss';
-// import { mainColors } from '../../../styles/variables'
 
- function Navbar() {
+function Navbar() {
   const [activeMenu, setActiveMenu] = useState('portfolio');
   const [activeSousMenu, setActiveSousMenu] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const menu = [
-    'A propos',
-    'Services',
-    'Portfolio',
-    'Contact'
-  ]
+  const menu = ['A propos', 'Services', 'Portfolio', 'Contact'];
 
   const handleHoverChange = (choice) => {
-    setActiveMenu(choice.toLowerCase())
-    if (choice.toLowerCase() === 'portfolio') {
-      setActiveSousMenu(PortCateg)
-    }
-    else if(choice.toLowerCase() === 'services') {
-      setActiveSousMenu(ServiceCateg)
-    }
-    else {
-      setActiveSousMenu([]);
-    }
-  }
+    setActiveMenu(choice.toLowerCase());
+    if (choice.toLowerCase() === 'portfolio') setActiveSousMenu(PortCateg);
+    else if (choice.toLowerCase() === 'services') setActiveSousMenu(ServiceCateg);
+    else setActiveSousMenu([]);
+  };
 
   return (
     <>
-    <div className={`absolute bg-white h-[800px] w-screen z-40
-    transition-all transition-discrete duration-500 ease-in-out transform"
-    ${isMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-10 opacity-0'}`}
-    onMouseOut={() => setIsMenuOpen(false)}
-    onMouseOver={() => setIsMenuOpen(true)}
-    > 
-      <SousMenu activeSousMenu={activeSousMenu} activeMenu={activeMenu}/>
-    </div>
-    <nav className="absolute z-40 flex justify-between w-screen px-20 py-10 items-center">
-      <Logo source={` ${isMenuOpen ? '/img/logo_beige.png' : '/img/logo_blanc.png'}`} className=" transition-all duration-500 transition-discrete"/>
-      <div className={` absolute left-1/2 hover:scale-[1.3] transition duration-500 ${isMenuOpen ? 'block' : 'hidden'}`} onClick={() => setIsMenuOpen(false)}>
-        <i className={`fas fa-xmark text-2xl font-light text-gray-600`}/>
-      </div>
-      <div className={`w-2/6 flex justify-between font-normal transition-all duration-500 transition-discrete
-      ${isMenuOpen ? 'text-gray-600' : "text-white"}
-      `} 
+      <div
+        className={`absolute bg-white h-[800px] w-screen z-40 transition-all duration-500 ease-in-out transform ${
+          isMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-10 opacity-0'
+        }`}
+        onMouseOut={() => setIsMenuOpen(false)}
+        onMouseOver={() => setIsMenuOpen(true)}
       >
-        {
-          menu.map((m, index) => {
-            return (
-              <Link 
-                className="relative font-light after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
-                onMouseOver={() => {
-                  setIsMenuOpen(true);
-                  handleHoverChange(m)
-                }}
-                onClick={() => {
-                  setIsMenuOpen(true);
-                  handleHoverChange(m)
-                }}
-                // to={m} 
-                key={index}
-              >{m}</Link>
-            )
-          } )
-        }
+        <SousMenu activeSousMenu={activeSousMenu} activeMenu={activeMenu}/>
       </div>
-    </nav>
+      
+      {/* menu mobile */}
+      <AnimatePresence>
+          {isNavOpen && (
+            <motion.div
+              className="absolute w-screen h-screen flex z-40 bg-white"
+              initial={{ y: -window.innerHeight }}
+              animate={{ y: 0 }}
+              exit={{ y: -window.innerHeight }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 0.5,
+                duration: 1.5
+              }}
+            >
+              <ul className="flex flex-col items-center justify-center w-full">
+                {menu.map((m, index) => (
+                  <li key={index} className='py-2'>
+                    <Link to="/projets/" className="text-gray-900 text-center text-2xl font-light">
+                      {m}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+      </AnimatePresence>
+
+      <nav className="absolute z-40 flex justify-between w-screen px-6 md:px-20 py-10 items-center">
+        <Logo
+          source={isMenuOpen || isNavOpen ? '/img/logo_beige.png' : '/img/logo_blanc.png'}
+          className="transition-all duration-500"
+        />
+
+        {/* Bouton de fermeture du menu */}
+        <div
+          className={`absolute left-1/2 hover:scale-125 transition duration-500 ${
+            isMenuOpen ? 'block' : 'hidden'
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <i className="fas fa-xmark text-2xl font-light text-gray-600" />
+        </div>
+
+        {/* Menu mobile */}
+        <div className="flex items-center md:hidden" data-aos="fade-left">
+          <button
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            className="text-gray-700 focus:outline-none max-w-28 z-50"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className={`md:w-10 md:h-10 w-8 h-8 transition-all duration-500 ${
+                isNavOpen ? 'rotate-90' : 'rotate-0'
+              }`}
+              fill="none"
+              stroke={`${isNavOpen ? "black" : "white"}`}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isNavOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Menu desktop */}
+        <div
+          className={`hidden w-2/6 md:flex justify-between font-normal transition-all duration-500 ${
+            isMenuOpen ? 'text-gray-600' : 'text-white'
+          }`}
+        >
+          {menu.map((m, index) => (
+            <Link
+              key={index}
+              className="relative font-light after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+              onMouseOver={() => {
+                setIsMenuOpen(true);
+                handleHoverChange(m);
+              }}
+              onClick={() => {
+                setIsMenuOpen(true);
+                handleHoverChange(m);
+              }}
+            >
+              {m}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </>
-  )
- }
+  );
+}
 
- export default Navbar;
+export default Navbar;
 
+// ---------------------------------------------
+// COMPOSANTS INTERNES
+// ---------------------------------------------
 
- function About() {
+function About() {
   return (
     <AnimatePresence mode="wait">
-    <motion.div className="font-normal w-full flex flex-col"
+      <motion.div
+        className="font-normal w-full flex flex-col"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.4 }}
-    >
-      <h5 className="mb-4 text-4xl font-light" style={{color: mainColors.mainBrown}}>À PROPOS DE NOUS</h5>
-      <p className="text-xl text-gray-600 w-2/3 text-left font-light">
-        Nous sommes une équipe passionnée de design d'interieur 3D et designers...
-      </p>
-    </motion.div>
+      >
+        <h5 className="mb-4 text-4xl font-light" style={{ color: mainColors.mainBrown }}>
+          À PROPOS DE NOUS
+        </h5>
+        <p className="text-xl text-gray-600 w-2/3 text-left font-light">
+          Nous sommes une équipe passionnée de design d'intérieur 3D et designers...
+        </p>
+      </motion.div>
     </AnimatePresence>
   );
 }
@@ -107,31 +167,38 @@ import '../styles/navbar.scss';
 function Contact() {
   return (
     <AnimatePresence mode="wait">
-    <motion.div className="text-4xl font-normal w-full flex flex-col"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.4 }}
-    >
-      <h4 className="mb-4 text-4xl font-light" style={{color: mainColors.mainBrown}}>CONTACTEZ-NOUS</h4>
-      <p className="text-xl text-gray-600 font-light"><i className='far fa-envelope pr-2' style={{color: mainColors.mainBrown}}/>  contact@exemple.com</p>
-      <p className="text-xl text-gray-600 font-light"><i className='far fa-address-book pr-2' style={{color: mainColors.mainBrown}}/>  +261 34 00 000 00</p>
-    </motion.div>
+      <motion.div
+        className="text-4xl font-normal w-full flex flex-col"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.4 }}
+      >
+        <h4 className="mb-4 text-4xl font-light" style={{ color: mainColors.mainBrown }}>
+          CONTACTEZ-NOUS
+        </h4>
+        <p className="text-xl text-gray-600 font-light">
+          <i className="far fa-envelope pr-2" style={{ color: mainColors.mainBrown }} /> contact@exemple.com
+        </p>
+        <p className="text-xl text-gray-600 font-light">
+          <i className="far fa-address-book pr-2" style={{ color: mainColors.mainBrown }} /> +261 34 00 000 00
+        </p>
+      </motion.div>
     </AnimatePresence>
   );
 }
 
-function SousMenu ({activeSousMenu, activeMenu}) {
+function SousMenu({ activeSousMenu, activeMenu }) {
   return (
-    <div className='px-20 py-36 flex justify-between'>
-    {activeMenu === "a propos" ? (
+    <div className="px-20 py-36 flex justify-between">
+      {activeMenu === 'a propos' ? (
         <About />
-      ) : activeMenu === "contact" ? (
+      ) : activeMenu === 'contact' ? (
         <Contact />
       ) : (
         <ul className="text-4xl font-normal flex flex-col items-start justify-start w-full">
           <AnimatePresence mode="wait">
-            {activeSousMenu.map((a, index) => (
+            {activeSousMenu.map((a) => (
               <motion.li
                 key={a.nom}
                 className="py-2 hover:translate-x-3"
@@ -140,7 +207,7 @@ function SousMenu ({activeSousMenu, activeMenu}) {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <Link to='/projets' className="text-left font-extralight">
+                <Link to="/projets" className="text-left font-extralight">
                   {a.nom}
                 </Link>
               </motion.li>
@@ -149,32 +216,30 @@ function SousMenu ({activeSousMenu, activeMenu}) {
         </ul>
       )}
 
-    <div className='w-2/3 border-l-2 pl-10'>
-      <Swiper
-             modules={[Navigation, Mousewheel, Autoplay]}
-              spaceBetween={20}
-              slidesPerView={2}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-              }}
-              mousewheel={{ forceToAxis: true }}
-              speed={800}
-              loop={true}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-              className="w-full"
-      >
-            {projects.map((projet, index) => {
-                return (
-                    <SwiperSlide key={index}>
-                      <Link to={`projets/${projet.titre.replace(/\s+/g, "")}`} className='h-[500px]'>
-                        <ProjectCard imgSrc={projet.bannerImage} place="Madagascar" title={projet.titre}/>
-                      </Link>
-                    </SwiperSlide>
-                )
-            })}
-      </Swiper>
+      <div className="w-2/3 border-l-2 pl-10">
+        <Swiper
+          modules={[Navigation, Mousewheel, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={2}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          mousewheel={{ forceToAxis: true }}
+          speed={800}
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="w-full"
+        >
+          {projects.map((projet, index) => (
+            <SwiperSlide key={index}>
+              <Link to={`projets/${projet.titre.replace(/\s+/g, '')}`} className="h-[500px]">
+                <ProjectCard imgSrc={projet.bannerImage} place="Madagascar" title={projet.titre} />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
