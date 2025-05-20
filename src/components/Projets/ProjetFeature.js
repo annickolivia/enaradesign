@@ -157,7 +157,7 @@ const ProjectDetails = () => {
       
     <AnimatePresence mode="wait">
       {
-        showDevis && (<Devis />)
+        showDevis && (<Devis setShowDevis={setShowDevis}/>)
       } 
     </AnimatePresence>
     </div>

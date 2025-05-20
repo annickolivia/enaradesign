@@ -32,12 +32,13 @@ function App() {
   }, []);
   return (
 
-      <Routes>
-        <Route path="/" element={<Accueil />} />
-        <Route path="/projets/" element={<Projets />} />
-        <Route path="/projets/:id" element={<ProjectDetails />} />
-        <Route path="/devis" element={<Devis />} />
-      </Routes>
+      // <Routes>
+      //   <Route path="/" element={<Accueil />} />
+      //   <Route path="/projets/" element={<Projets />} />
+      //   <Route path="/projets/:id" element={<ProjectDetails />} />
+      //   <Route path="/devis" element={<Devis />} />
+      // </Routes>
+      <Devis />
   );
 }
 
