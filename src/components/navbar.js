@@ -70,7 +70,7 @@ function Navbar() {
 
       <nav className="absolute z-40 flex justify-between w-screen px-6 md:px-20 py-10 items-center">
         <Logo
-          source={isMenuOpen || isNavOpen ? '/img/logo_beige.png' : '/img/logo_blanc.png'}
+          source={isMenuOpen || isNavOpen ? '/img/logo_complete.png' : '/img/logo_complete_blanc.png'}
           className="transition-all duration-500"
         />
 
@@ -145,7 +145,7 @@ export default Navbar;
 
 function About() {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <motion.div
         className="font-normal w-full flex flex-col"
         initial={{ opacity: 0, y: 10 }}
@@ -153,11 +153,23 @@ function About() {
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.4 }}
       >
-        <h5 className="mb-4 text-4xl font-light" style={{ color: mainColors.mainBrown }}>
+        <h5 className="mb-4 text-2xl font-light" style={{ color: mainColors.mainBrown }}>
           À PROPOS DE NOUS
         </h5>
-        <p className="text-xl text-gray-600 w-2/3 text-left font-light">
-          Nous sommes une équipe passionnée de design d'intérieur 3D et designers...
+        <p className="text-base text-gray-600 w-2/3 xl:w-3/3 xl:mr-2 text-justify font-light">
+          SENSO Design Agency est une agence d’aménagement
+          d’intérieur basée à Madagascar, spécialisée également
+          dans la sous-traitance de modélisation 3D et de
+          visualisation architecturale. 
+          <br></br> <br></br>
+          Notre mission ? Donner vie à vos visions grâce à un
+          mélange unique de créativité, d’expertise technique et
+          de technologies de pointe. Nous menons vos projets
+          vers l'élégance et l'innovation.  <br></br> <br></br>
+          Que vous soyez un particulier, un professionnel ou un
+          promoteur, nous transformons vos idées en réalités
+          tangibles, alliant esthétique et fonctionnalité avec
+          professionnalisme.
         </p>
       </motion.div>
     </AnimatePresence>
@@ -166,22 +178,19 @@ function About() {
 
 function Contact() {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <motion.div
-        className="text-4xl font-normal w-full flex flex-col"
+        className="font-normal w-full flex flex-col"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.4 }}
       >
-        <h4 className="mb-4 text-4xl font-light" style={{ color: mainColors.mainBrown }}>
+        <h4 className="mb-4 text-2xl font-light" style={{ color: mainColors.mainBrown }}>
           CONTACTEZ-NOUS
         </h4>
         <p className="text-xl text-gray-600 font-light">
-          <i className="far fa-envelope pr-2" style={{ color: mainColors.mainBrown }} /> contact@exemple.com
-        </p>
-        <p className="text-xl text-gray-600 font-light">
-          <i className="far fa-address-book pr-2" style={{ color: mainColors.mainBrown }} /> +261 34 00 000 00
+          <i className="far fa-envelope pr-2" style={{ color: mainColors.mainBrown }} /> project@senso-agency.com
         </p>
       </motion.div>
     </AnimatePresence>
@@ -196,8 +205,8 @@ function SousMenu({ activeSousMenu, activeMenu }) {
       ) : activeMenu === 'contact' ? (
         <Contact />
       ) : (
-        <ul className="text-4xl font-normal flex flex-col items-start justify-start w-full">
-          <AnimatePresence mode="wait">
+        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full">
+          <AnimatePresence>
             {activeSousMenu.map((a) => (
               <motion.li
                 key={a.nom}

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 function Section3() {
   return (
-    <section className='px-6 md:px-20 py-10 h-fit md:h-[1200px]' style={{backgroundColor: mainColors.mainBrown}}>
+    <section className='px-6 md:px-20 pt-10 h-fit md:h-[1075px]' style={{backgroundColor: mainColors.mainBrown}}>
         <h3 className='text-white font-extralight mb-10'
           data-aos="fade-up"
         >Projets de l'<span className="font-normal">année</span></h3>
@@ -44,17 +44,26 @@ function Section3() {
             {projects.map((projet, index) => {
                 return (
                     <SwiperSlide key={index}>
-                      <Link to={`projets/${projet.titre.replace(/\s+/g, "")}`} className='h-[800px]'>
+                      <Link to={`projets/${projet.titre.replace(/\s+/g, "")}`} className='h-[800px] hover:scale-125 transform transition-all duration-700'>
                         <ProjectCard imgSrc={projet.bannerImage} place="Madagascar" title={projet.titre}/>
                       </Link>
                     </SwiperSlide>
                 )
             })}
 
-            <div className="swiper-button-prev text-white absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer">
-            </div>
-            <div className="swiper-button-next text-white absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer">
-            </div>
+            <style>
+              {`
+                .custom-swiper-button::after {
+                  color: white !important;
+                  font-size: 2rem !important;
+                  font-weight: bold;
+                  font-size: 40px
+                }
+              `}
+            </style>
+
+              <div className="swiper-button-prev text-6xl custom-swiper-button absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer" />
+              <div className="swiper-button-next text-6xl custom-swiper-button absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer" />
         </Swiper>
         <img className="float-right w-14 md:w-auto" src="/img/about/numero.png" alt="numero"/>
     </section>

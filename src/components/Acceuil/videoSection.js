@@ -10,8 +10,9 @@ function VideoSection() {
             muted 
             // playsInline 
             className="w-full h-auto"
+            data-aos="fade-up"
         />
-        <h2 className='relative text-white bottom-40 px-20 font-extralight'><span className='font-semibold'>Notre </span> approche</h2>
+        <h2 className='relative text-white bottom-40 px-20 font-extralight'  data-aos="fade-right" data-aos-delay="300"><span className='font-semibold'>Notre </span> approche</h2>
     </div>
   )
 }

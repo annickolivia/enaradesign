@@ -4,6 +4,7 @@ import EmailBox from './EmailBox';
 import { mainColors } from '../styles/variables';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 function Footer() {
     const [clicked, setClicked] = useState('');
@@ -21,8 +22,7 @@ function Footer() {
     ]
     
     const contact = [
-      '+261 32 05 802 56',
-      'project@enaradesign.com',
+      'project@senso-agency.com',
       'Antananarivo, Madagascar'
     ]
 
@@ -51,42 +51,47 @@ function Footer() {
   
   return (
     <footer 
-      className='z-40 py-16 px-6 md:px-20 flex flex-col w-screen justify-between lg:h-[800px] h-fit items-center
+      className='z-40 py-6 px-6 md:px-20 flex flex-col w-screen justify-between lg:h-[400px] h-fit items-center
         'style={{backgroundColor: mainColors.mainBrown}}>
-        <img className="h-20 w-16 md:h-44 md:w-40 my-5 md:my-0" src="/img/logo_blanc.png" alt="logoBlanc"/>
-        <div className='text-white grid grid-cols-1 md:grid-cols-5 justify-between w-full space-y-5 md:space-y-0'>
-          <div className='text-left flex flex-col items-center'>
-            <h5 className='text-white mb-2'>DECOUVRIR</h5>
-            {
-              decouvrir.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)} )
-            }
-          </div>
-          <div className='text-left flex flex-col md:col-start-3 items-center'>
-            <h5 className='text-white mb-2'>PORTFOLIO</h5>
-            {
-              PortCateg.map((m, index) => {return (<p key={index}  className='text-left'>{m}</p>)})
-            }
-          </div>
-          <div className='flex flex-col items-center md:col-start-5'>
-            <h5 className='text-white mb-2'>CONTACT</h5>
-            {
-              contact.map((m, index) => {return (<p key={index} className='text-left '>{m}</p>)})
-            }
+        <div className='flex justify-center flex-col md:flex-row md:justify-between xl:w-full items-center'>
+          <img className="md:block h-14 w-1/3 md:h-[120px] md:w-48 my-5 md:my-0" src="/img/logo_complete_blanc.png" alt="logoBlanc" data-aos="fade-right"/>
+          <div className='w-2/3 text-white grid grid-cols-1 md:grid-cols-3 justify-between space-y-5 md:space-y-0' data-aos="fade-up" data-aos-delay="200">
+            <div className='text-left flex flex-col items-center'>
+              <h5 className='text-white mb-2 w-full text-center md:text-left'>DECOUVRIR</h5>
+              {
+                decouvrir.map((m, index) => {return (<p key={index}  className='text-center md:text-left w-full'>{m}</p>)} )
+              }
+            </div>
+            <div className='text-left flex flex-col  items-center'>
+              <h5 className='text-white mb-2 w-full text-center md:text-left'>PORTFOLIO</h5>
+              {
+                PortCateg.map((m, index) => {return (<Link to="/projets" key={index}  className='text-center md:text-left w-full'>{m}</Link>)})
+              }
+            </div>
+            <div className='flex flex-col items-center'>
+              <h5 className='text-white mb-2 w-full text-center md:text-left'>CONTACT</h5>
+              {
+                contact.map((m, index) => {return (<p key={index} className='text-center md:text-left  w-full'>{m}</p>)})
+              }
+            </div>
           </div>
         </div>
-        <p className='text-white text-xl py-5 md:py-0'>NOUS SUIVRE</p>
-        <div className='flex w-2/4 justify-between border-t-2 pt-10'>
+        <p className='text-white text-xl py-5 md:py-0' data-aos="fade-up" data-aos-delay="300">NOUS SUIVRE</p>
+        <div className='flex w-2/4 xl:w-1/4  justify-between border-t-2 pt-10'>
           {
             policy.map((po, index) => {
               return (
-                <Link to={po.link} key={index} style={{textDecoration: 'none'}} data-aos="fade-left" data-aos-delay="100">
-                  <i className={`text-white ${po.icon} text-4xl`} ></i>
+                <Link to={po.link} key={index} style={{textDecoration: 'none'}}>
+                  <motion.i className={`text-white ${po.icon} text-4xl`}
+                  whileHover={{ scale: 1.2}}
+                  whileTap={{ scale: 0.8 }}
+                  ></motion.i>
                 </Link>
               )
             })
           }
         </div>
-        <p className='text-white py-3 md:py-0'>COPYRIGHT ENARA DESIGN AGENCY 2025</p>
+        <p className='text-white py-3 md:py-0'>COPYRIGHT SENSO DESIGN AGENCY 2025</p>
     </footer>
   )
 }

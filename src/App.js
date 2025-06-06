@@ -1,4 +1,3 @@
-// App.js
 import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -6,6 +5,7 @@ import {Routes, Route, useLocation } from 'react-router-dom';
 import Projets from './views/Projets';
 import Accueil from './views/Accueil';
 import ProjectDetails from './components/Projets/ProjetFeature';
+import ServiceSlider from './views/Services';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -32,13 +32,13 @@ function App() {
   }, []);
   return (
 
-      // <Routes>
-      //   <Route path="/" element={<Accueil />} />
-      //   <Route path="/projets/" element={<Projets />} />
-      //   <Route path="/projets/:id" element={<ProjectDetails />} />
-      //   <Route path="/devis" element={<Devis />} />
-      // </Routes>
-      <Devis />
+      <Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/projets/" element={<Projets />} />
+        <Route path="/projets/:id" element={<ProjectDetails />} />
+        <Route path="/devis" element={<Devis />} />
+        <Route path="/services/" element={<ServiceSlider />} />
+      </Routes>
   );
 }
 

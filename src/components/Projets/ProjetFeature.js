@@ -7,13 +7,16 @@ import { mainColors } from '../../styles/variables';
 import DevisBtn from '../../components/devisBtn';
 import { motion, AnimatePresence } from 'framer-motion';
 import Devis from '../../views/Devis';
+import CustomCursor from '../cursorPerso';
 
 const ProjectDetails = () => {
   const [scale, setScale] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
   const [showDevis, setShowDevis] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const { id } = useParams();
   const project = projects.find((p) => p.titre.replace(/\s+/g, "") === id);
+  
   // scrool detect
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +39,7 @@ const ProjectDetails = () => {
 
   return (
     <div className="relative">
+      <CustomCursor />
       {/* boutton revenir a accueil */}
       <AnimatePresence mode="wait">
       {
@@ -66,7 +70,8 @@ const ProjectDetails = () => {
         )
       }
       </AnimatePresence>
-      <div className='relative h-screen  overflow-hidden'
+      <div className='relative h-screen  overflow-hidden'>
+      <div className='relative h-full'
         style={{
         backgroundImage: `url(${project.bannerImage})`,
         backgroundPosition: 'center',
@@ -83,6 +88,7 @@ const ProjectDetails = () => {
           </div>
         </div>
         <div className="absolute z-20 bg-black bg-opacity-40 w-screen h-screen top-0"></div>
+      </div>
       </div>
       {/* Elements */}
       <div className="text-center py-10 md:py-20 px-6 md:px-20">
@@ -119,26 +125,28 @@ const ProjectDetails = () => {
         <section>
           <div className='flex items-center justify-between py-10 px-20 '>   
               <div className='h-[1px] w-4/5' style={{backgroundColor: mainColors.mainBrown}}></div>
-              <h3 className="text-2xl font-normal" style={{color:mainColors.mainBrown}}>Architecture</h3>
+              <h3 className="text-2xl font-normal" style={{color:mainColors.mainBrown}}>Galerie</h3>
           </div>
-          <div className="grid grid-cols-1 gap-2">
+          <div className="grid grid-cols-4 gap-2 auto-rows-[200px]">
             {project.architectureImages.map((src, i) => (
-              <img key={i} src={src} alt={`Architecture ${i}`} className="rounded-lg object-cover w-full h-screen" />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Design intérieur */}
-      {project.interiorImages.length > 0 && (
-        <section className=''>
-          <div className='flex items-center justify-between py-10 px-6 md:px-20 '>
-              <h3 className="text-2xl font-normal" style={{color:mainColors.mainBrown}}>Design d’intérieur</h3>
-              <div className='h-[1px] w-4/5' style={{backgroundColor: mainColors.mainBrown}}></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {project.interiorImages.map((src, i) => (
-              <img key={i} src={src} alt={`Design intérieur ${i}`} className="object-cover w-full h-96" />
+              <div
+                key={i}
+                className={`
+                  overflow-hidden w-full h-full 
+                  ${i % 7 === 0 ? 'col-span-2 row-span-2' : ''}
+                  ${i % 5 === 0 ? 'col-span-2' : ''}
+                  ${i % 3 === 0 ? 'row-span-2' : ''}
+                `}
+                onClick={() => setSelectedImage(src)}
+              >
+                <motion.img
+                  src={src}
+                  alt={`Architecture ${i}`}
+                  whileHover={{ scale: 1.1, filter: 'brightness(1.2)' }}
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  className="object-cover w-full h-full"
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -160,6 +168,31 @@ const ProjectDetails = () => {
         showDevis && (<Devis setShowDevis={setShowDevis}/>)
       } 
     </AnimatePresence>
+
+    {/* lighbox  */}
+    <AnimatePresence>
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)} // click background to close
+        >
+          <motion.img
+            src={selectedImage}
+            alt="Zoomed"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()} // prevent background click
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+
     </div>
   );
 };

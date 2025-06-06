@@ -1,4 +1,4 @@
-import React, {useState, useRef, use} from 'react'
+import React, {useState, useRef} from 'react'
 import { motion } from 'framer-motion';
 import { mainColors } from '../styles/variables';
 import emailjs from "@emailjs/browser";
@@ -66,7 +66,10 @@ const readFileAsDataURL = (file) => {
       },
       "f7i-MgSM-lphH4E2m"
     )
-    .then(() => alert("PDF envoyé à Enara 🎉"))
+    .then(() => {
+      alert("PDF envoyé à Enara 🎉");
+      setShowDevis(false);
+    })
     .catch((err) => console.error("Erreur:", err));
   };
   return (
@@ -75,20 +78,20 @@ const readFileAsDataURL = (file) => {
             animate={{ x: 0 }}
             exit={{ x: window.innerWidth }}
             transition={{ duration: 1.7 , ease: "easeInOut" }}
-            classNameName='text-white items-center justify-center h-screen w-screen absolute top-0'
+            className='text-white items-center justify-center h-screen w-screen absolute top-0'
             style={{backgroundColor: mainColors.mainBrown}}
         >
-          <div className='flex h-screen w-screen items-center justify-center'>
-            <div className='w-2/3 bg-white shadow-xl flex px-10 py-10'>
-              <div className='w-1/2 pr-10'>
+          <div className='flex h-screen w-screen items-center justify-center px-6 md:px-0'>
+            <div className='w-full md:w-2/3 bg-white shadow-xl flex px-6 md:px-10 py-10'>
+              <div className='w-full md:w-1/2 pr-0 md:pr-10 h-fit'>
                 <form className="" ref={formRef} onSubmit={handleSubmit}>
-                  <h6 className='mb-4 font-light'>Demander un devis</h6>
+                  <h6 className='mb-4 font-light text-lg md:text-xl'>Demander un devis</h6>
                   <div className="mb-2">
                     <label htmlFor="email" className="block mb-2 text-sm font-light text-gray-500 dark:text-white">Votre email</label>
                     <input type="email" name="email" id="email" className=" border border-gray-300 text-gray-900 text-sm block w-full p-0.5 dark normal-case" placeholder="example@gmail.com" required />
                   </div>
                   <div className="mb-2">
-                    <label htmlFor="reason" className="block mb-2 text-sm font-light text-gray-500 dark:text-white">Demandez ce que vous voulez?</label>
+                    <label htmlFor="reason" className="block mb-2 text-sm font-light text-gray-500 dark:text-white">Demandez ce que vous voulez 😊</label>
                     <textarea id="reason" name="reason" className="border h-[100px] border-gray-300 text-gray-900 text-sm  block w-full p-0.5 normal-case" placeholder='ici...' required />
                   </div>
                   <div className="flex flex-col items-start">
@@ -100,7 +103,7 @@ const readFileAsDataURL = (file) => {
                     <img key={idx} src={img.preview} alt={`img-${idx}`} className="h-20 rounded" />
                     ))}
                   </div>
-                  <button type="cancel" className=" mr-5 bg-white border-[1px] hover:scale-105 transition focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xs text-sm w-full sm:w-auto px-5 py-1 text-center"
+                  <button className=" mr-5 mb-4 md:mb-0 bg-white border-[1px] hover:scale-105 transition focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xs text-sm w-full sm:w-auto px-5 py-1 text-center"
                     style={{borderColor: mainColors.mainBrown, color: mainColors.mainBrown}}
                     onClick={() => setShowDevis(false)}
                   >Annuler</button>
@@ -109,7 +112,7 @@ const readFileAsDataURL = (file) => {
                   >Envoyer</button>
                 </form>
               </div>
-              <div className='w-1/2 h-1/1 bg-black'>
+              <div className='w-1/2 h-1/1 bg-black hidden md:block'>
                 <img className="h-full w-auto object-cover" src="/img/bg_accueil.jpg" alt="formImage"/>
               </div>
             </div>
