@@ -1,0 +1,5 @@
+bugs:
+logo doesn't change its color 
+important :
+header, footer
+police exacte 
