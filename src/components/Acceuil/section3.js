@@ -62,8 +62,8 @@ function Section3() {
               `}
             </style>
 
-              <div className="swiper-button-prev text-6xl custom-swiper-button absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer" />
-              <div className="swiper-button-next text-6xl custom-swiper-button absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer" />
+              <div className="swiper-button-prev text-6xl custom-swiper-button absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer hover:scale-125 transition-transform duration-300" />
+              <div className="swiper-button-next text-6xl custom-swiper-button absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer  hover:scale-125 transition-transform duration-300" />
         </Swiper>
         <img className="float-right w-14 md:w-auto" src="/img/about/numero.png" alt="numero"/>
     </section>

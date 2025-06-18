@@ -13,11 +13,11 @@ const HeroBanner = () => {
           <motion.h3 className="text-white font-thin mb-10 sm:text-3xl md:text-6xl text-left"
           data-aos="fade-right"
           data-aos-delay="600"
-          whileHover={{
-            color: "#ffffff", // neon aqua
-            textShadow: "0px 0px 8px #ffffff",
-            transition: { duration: 0.3 }
-          }}
+          // whileHover={{
+          //   color: "#ffffff", // neon aqua
+          //   textShadow: "0px 0px 8px #ffffff",
+          //   transition: { duration: 0.3 }
+          // }}
           ><span className='font-bold'>Créer </span> des espaces <br></br> <span className='font-bold'>uniques</span> et inspirants
           </motion.h3>
           <div 
