@@ -125,31 +125,55 @@ export const ServiceCateg = [
     ],
     ctaText: "Envie d’un intérieur tout en douceur ? Confiez-nous votre projet sur-mesure."
   },
-  {
-    titre: "PROJET ATOS",
-    date: "Décembre 15 2024",
-    type: "Architecture",
-    chemin: "projets/projet_atos",
-    categorie: "professionel",
-    bannerImage: "/img/Projets/atos/atos-1.png",
-    elements: ["Architecture", "Plan 3D", "Vue extérieure"],
+   {
+    titre: "Mahatony",
+    date: "mars 21 2025",
+    type: "Design d'intérieur",
+    chemin: "projets/beach_house",
+    categorie: "commercial",
+    bannerImage: "/img/Projets/beach/beach-1.png",
+    elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
     description:
-      "Une villa en bord de mer conçue avec des lignes contemporaines et des matériaux durables, parfaitement intégrée à son environnement côtier pour une immersion naturelle et lumineuse.",
+      "Un espace pensé comme une véritable bulle de détente. Le design épuré, les matières douces et la lumière naturelle offrent une atmosphère paisible et élégante, idéale pour se ressourcer.",
     architectureImages: [
-      "/img/Projets/atos/atos-1.png",
-      "/img/Projets/atos/atos (2).png",
-      "/img/Projets/atos/atos (3).png",
-      "/img/Projets/atos/atos (4).png",
-      "/img/Projets/atos/atos (5).png",
-      "/img/Projets/atos/atos (6).png",
-      "/img/Projets/atos/atos (7).png",
-      "/img/Projets/atos/atos (8).png"
+      "/img/Projets/beach/beach-1.png",
+      "/img/Projets/beach/beach (2).png",
+      "/img/Projets/beach/beach (3).png",
+      "/img/Projets/beach/beach (4).png",
+      "/img/Projets/beach/beach (5).png",
+      "/img/Projets/beach/beach (6).png"
     ],
     interiorImages: [
     
     ],
-    ctaText: "Faites de votre vision un lieu d’exception, conçu avec exigence et créativité."
+    ctaText: "Envie d’un intérieur tout en douceur ? Confiez-nous votre projet sur-mesure."
   },
+  // {
+  //   titre: "PROJET ATOS",
+  //   date: "Décembre 15 2024",
+  //   type: "Architecture",
+  //   chemin: "projets/projet_atos",
+  //   categorie: "professionel",
+  //   bannerImage: "/img/Projets/atos/atos-1.png",
+  //   elements: ["Architecture", "Plan 3D", "Vue extérieure"],
+  //   description:
+  //     "Une villa en bord de mer conçue avec des lignes contemporaines et des matériaux durables, parfaitement intégrée à son environnement côtier pour une immersion naturelle et lumineuse.",
+  //   architectureImages: [
+  //     "/img/Projets/atos/atos-1.png",
+  //     "/img/Projets/atos/atos (2).png",
+  //     "/img/Projets/atos/atos (3).png",
+  //     "/img/Projets/atos/atos (4).png",
+  //     "/img/Projets/atos/atos (5).png",
+  //     "/img/Projets/atos/atos (6).png",
+  //     "/img/Projets/atos/atos (7).png",
+  //     "/img/Projets/atos/atos (8).png"
+  //   ],
+  //   interiorImages: [
+    
+  //   ],
+  //   ctaText: "Faites de votre vision un lieu d’exception, conçu avec exigence et créativité."
+  // },
+  
   {
     titre: "BUNGALOW AMPEFY",
     date: "Janvier 12 2025",

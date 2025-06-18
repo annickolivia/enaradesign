@@ -82,7 +82,7 @@ function Footer() {
               ))}
             </div>
             
-            <div className='text-center space-y-4 md:text-left flex flex-col items-center md:items-start'>
+            <div className='text-center space-y-4 md:text-left flex flex-col items-center md:items-center'>
               <h5 className='text-white mb-3 text-lg font-semibold' >RESEAUX SOCIAUX</h5>
                 {/* Bloc Policy (icônes) */}
                 <div className='flex justify-center md:justify-start w-full space-x-6'>

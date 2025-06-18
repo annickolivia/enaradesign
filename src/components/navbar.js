@@ -69,10 +69,11 @@ function Navbar() {
       </AnimatePresence>
 
       <nav className="absolute z-40 flex justify-between w-screen px-6 md:px-20 py-10 items-center">
-        <Logo
+          <Logo
           source={isMenuOpen || isNavOpen ? '/img/logo_complete.png' : '/img/logo_complete_blanc.png'}
-          className="transition-all duration-500"
-        />
+          className="translate-x-4 transition-all duration-500"
+          />
+        
 
         {/* Bouton de fermeture du menu */}
         <div
@@ -147,7 +148,7 @@ function About() {
   return (
     <AnimatePresence>
       <motion.div
-        className="font-normal w-full flex flex-col"
+        className="font-normal w-full mr-16 flex flex-col items-center mt-12"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
@@ -156,7 +157,7 @@ function About() {
         <h5 className="mb-4 text-2xl font-light" style={{ color: mainColors.mainBrown }}>
           À PROPOS DE NOUS
         </h5>
-        <p className="text-base text-gray-600 w-2/3 xl:w-3/3 xl:mr-2 text-justify font-light">
+        <p className="text-base text-gray-600 w-5/6 xl:w-3/3 xl:mr-2 text-justify font-light">
           SENSO Design Agency est une agence d’aménagement
           d’intérieur basée à Madagascar, spécialisée également
           dans la sous-traitance de modélisation 3D et de
@@ -205,7 +206,7 @@ function SousMenu({ activeSousMenu, activeMenu }) {
       ) : activeMenu === 'contact' ? (
         <Contact />
       ) : (
-        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full">
+        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full ">
           <AnimatePresence>
             {activeSousMenu.map((a) => (
               <motion.li
