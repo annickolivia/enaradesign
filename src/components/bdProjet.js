@@ -127,21 +127,24 @@ export const ServiceCateg = [
   },
    {
     titre: "Mahatony",
-    date: "mars 21 2025",
+    date: "Janvier 2025",
     type: "Design d'intérieur",
-    chemin: "projets/beach_house",
+    chemin: "projets/Mahatony",
     categorie: "commercial",
-    bannerImage: "/img/Projets/beach/beach-1.png",
+    bannerImage: "/img/Projets/mahatony/1-SEJOUR.png",
     elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
     description:
-      "Un espace pensé comme une véritable bulle de détente. Le design épuré, les matières douces et la lumière naturelle offrent une atmosphère paisible et élégante, idéale pour se ressourcer.",
+      "Transformer l’ancien en un espace à la fois neuf et élégant, tel était le défi ambitieux de cette rénovation. Avec près de 800 m² habitables, cette villa a été entièrement repensée pour révéler son plein potentiel, tout en respectant son âme et son histoire. Chaque intervention a été guidée par une vision claire : sublimer l’existant en insufflant une esthétique chic minimaliste, où l’élégance se lit dans la simplicité des lignes et la noblesse des matériaux. Les volumes ont été retravaillés pour offrir une circulation fluide et une luminosité optimale, créant ainsi une atmosphère à la fois épurée et chaleureuse.",
     architectureImages: [
-      "/img/Projets/beach/beach-1.png",
-      "/img/Projets/beach/beach (2).png",
-      "/img/Projets/beach/beach (3).png",
-      "/img/Projets/beach/beach (4).png",
-      "/img/Projets/beach/beach (5).png",
-      "/img/Projets/beach/beach (6).png"
+      "/img/Projets/mahatony/1-SEJOUR.png",
+      "/img/Projets/mahatony/2. SAM.png",
+      "/img/Projets/mahatony/3. COIN TV.png",
+      "/img/Projets/mahatony/4. ESCALIER.png",
+      "/img/Projets/mahatony/5. SALLE DE SPORT.png",
+      "/img/Projets/mahatony/6. SALLE DE CINEMA.png",
+      "/img/Projets/mahatony/7. PARENTALE.png",
+      "/img/Projets/mahatony/9. CHAMBRE ENFANT.jpg",
+      "/img/Projets/mahatony/10. CHAMBRE ENFANT 2.jpg",   
     ],
     interiorImages: [
     
