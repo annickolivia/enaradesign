@@ -54,7 +54,7 @@ export const PortCateg = [
 
 export const ServiceCateg = [
   {
-    nom: "DESIGN D’INTÉRIEUR",
+    nom: "Design d'intérieur",
     descriptions: [
       "Études et conceptions d’aménagement",
       "Analyse des besoins et étude de faisabilité",
@@ -63,7 +63,7 @@ export const ServiceCateg = [
     imgSrc: "/img/serviceImg/6.jpg"
   },
   {
-    nom: "GESTION DES TRAVAUX",
+    nom: "Gestion des travaux",
     descriptions: [
       "Coordination des corps de métier et respect des délais",
       "Contrôle qualité hebdomadaire et ajustements en direct",
@@ -72,7 +72,7 @@ export const ServiceCateg = [
     imgSrc: "/img/serviceImg/5.jpg"
   },
   {
-    nom: "MODÉLISATION 3D / AMÉNAGEMENT EXTÉRIEUR",
+    nom: "Mpdélisation 3D / Aménagement extérieur",
     descriptions: [
       "Conception et aménagement",
       "Mise en relief de l’extérieur avec le paysage",
@@ -80,7 +80,7 @@ export const ServiceCateg = [
     imgSrc: "/img/serviceImg/4.jpg"
   },
   {
-    nom: "ANIMATION 3D / VISUALISATION ARCHITECTURALE",
+    nom: "Animation 3D / Visualisation architecturale",
     descriptions: [
       "Visites virtuelles 360° pour explorer chaque angle",
       "Plans 3D interactifs détaillés et précis",
@@ -90,7 +90,7 @@ export const ServiceCateg = [
     imgSrc: "/img/serviceImg/3.jpg"
   },
   {
-    nom: "REVUE ARCHITECTURALE",
+    nom: "Revue Architecturale",
     descriptions: [
       "Optimisation des surfaces",
       "Proposition de modifications architecturales",
@@ -102,12 +102,13 @@ export const ServiceCateg = [
 
  export const projects = 
  [
+  //BEACH HOUSE
   {
     titre: "BEACH HOUSE",
     date: "mars 21 2025",
     type: "Design d'intérieur",
     chemin: "projets/beach_house",
-    categorie: "commercial",
+    categorie: "residentiel",
     bannerImage: "/img/Projets/beach/beach-1.png",
     elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
     description:
@@ -125,12 +126,14 @@ export const ServiceCateg = [
     ],
     ctaText: "Envie d’un intérieur tout en douceur ? Confiez-nous votre projet sur-mesure."
   },
+
+  // MAHATONY
    {
     titre: "Mahatony",
     date: "Janvier 2025",
     type: "Design d'intérieur",
     chemin: "projets/Mahatony",
-    categorie: "commercial",
+    categorie: "residentiel",
     bannerImage: "/img/Projets/mahatony/1-SEJOUR.png",
     elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
     description:
@@ -145,6 +148,62 @@ export const ServiceCateg = [
       "/img/Projets/mahatony/7. PARENTALE.png",
       "/img/Projets/mahatony/9. CHAMBRE ENFANT.jpg",
       "/img/Projets/mahatony/10. CHAMBRE ENFANT 2.jpg",   
+    ],
+    interiorImages: [
+    
+    ],
+    ctaText: "Envie d’un intérieur tout en douceur ? Confiez-nous votre projet sur-mesure."
+  },
+  // BEDROOM
+   {
+    titre: "Bedroom",
+    date: "",
+    type: "Design d'intérieur",
+    chemin: "projets/Bedroom",
+    categorie: "residentiel",
+    bannerImage: "/img/Projets/bedroom/CP-2_Interactive-LightMix.jpg",
+    elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
+    description:
+      "Transformer l’ancien en un espace à la fois neuf et élégant, tel était le défi ambitieux de cette rénovation. Avec près de 800 m² habitables, cette villa a été entièrement repensée pour révéler son plein potentiel, tout en respectant son âme et son histoire. Chaque intervention a été guidée par une vision claire : sublimer l’existant en insufflant une esthétique chic minimaliste, où l’élégance se lit dans la simplicité des lignes et la noblesse des matériaux. Les volumes ont été retravaillés pour offrir une circulation fluide et une luminosité optimale, créant ainsi une atmosphère à la fois épurée et chaleureuse.",
+    architectureImages: [
+      "/img/Projets/bedroom/CP 1_Interactive LightMix.png",   
+      "/img/Projets/bedroom/CP 3_Interactive LightMix.png",   
+      "/img/Projets/bedroom/CP 4_Interactive LightMix.png",   
+      "/img/Projets/bedroom/CP 5_Interactive LightMix.png",   
+      "/img/Projets/bedroom/CP-2_Interactive-LightMix.jpg",   
+      "/img/Projets/bedroom/Vue 1_Interactive LightMix.png",   
+      "/img/Projets/bedroom/Vue 2_Interactive LightMix.png",   
+    ],
+    interiorImages: [
+    
+    ],
+    ctaText: "Envie d’un intérieur tout en douceur ? Confiez-nous votre projet sur-mesure."
+  },
+  // BEDROOM
+   {
+    titre: "Mario",
+    date: "",
+    type: "Design d'intérieur",
+    chemin: "projets/Miaro",
+    categorie: "residentiel",
+    bannerImage: "/img/Projets/miaro/1-SEJOUR.png",
+    elements: ["Design d’intérieur", "Plan 3D", "Décoration"],
+    description:
+      "Transformer l’ancien en un espace à la fois neuf et élégant, tel était le défi ambitieux de cette rénovation. Avec près de 800 m² habitables, cette villa a été entièrement repensée pour révéler son plein potentiel, tout en respectant son âme et son histoire. Chaque intervention a été guidée par une vision claire : sublimer l’existant en insufflant une esthétique chic minimaliste, où l’élégance se lit dans la simplicité des lignes et la noblesse des matériaux. Les volumes ont été retravaillés pour offrir une circulation fluide et une luminosité optimale, créant ainsi une atmosphère à la fois épurée et chaleureuse.",
+    architectureImages: [
+        "/img/Projets/miaro/1-SEJOUR.png",
+        "/img/Projets/miaro/2. SEJOUR_2.png",
+        "/img/Projets/miaro/3. SEJOUR_3.png",
+        "/img/Projets/miaro/4. SEJOUR_4.png",
+        "/img/Projets/miaro/5. SEJOUR_5.png",
+        "/img/Projets/miaro/6. SEJOUR_6.png",
+        "/img/Projets/miaro/7. SEJOUR_7.png",
+        "/img/Projets/miaro/8. CHAMBRE RDC.png",
+        "/img/Projets/miaro/9. CHAMBRE 1 - R+1.png",
+        "/img/Projets/miaro/10. CHAMBRE PARENTALE - R+1.png",
+        "/img/Projets/miaro/11. CHAMBRE PARENTALE 2 - R+1 .png",
+        "/img/Projets/miaro/12. DRESSING.png",
+        "/img/Projets/miaro/13. DRESSING 2.png",
     ],
     interiorImages: [
     
@@ -193,6 +252,35 @@ export const ServiceCateg = [
       "/img/Projets/ampefy/ampefy (3).png",
        "/img/Projets/ampefy/ampefy (4).png",
       "/img/Projets/ampefy/ampefy (5).png"
+    ],
+    interiorImages: [
+     
+    ],
+    ctaText: "Un projet d’hébergement touristique en tête ? Échangeons sur vos idées."
+  },
+  {
+    titre: "Eric",
+    date: "",
+    type: "",
+    chemin: "projets/Eric",
+    categorie: "commercial",
+    bannerImage: "/img/Projets/eric/eric-1.png",
+    elements: ["Architecture", "Design d’intérieur", "Plan 3D", "Documentation"],
+    description:
+      "Ce complexe hôtelier, niché en pleine nature, marie harmonieusement simplicité architecturale et confort moderne. Une invitation à la détente dans un décor chaleureux et naturel.",
+    architectureImages: [
+        "/img/Projets/eric/eric-1.png",
+        "/img/Projets/eric/eric (2).png",
+        "/img/Projets/eric/eric (3).png",
+        "/img/Projets/eric/eric (4).png",
+        "/img/Projets/eric/eric (5).png",
+        "/img/Projets/eric/eric (7).png",
+        "/img/Projets/eric/eric (8).png",
+        "/img/Projets/eric/eric (9).png",
+        "/img/Projets/eric/eric (10).png",
+        "/img/Projets/eric/eric (11).png",
+        "/img/Projets/eric/eric (12).png"
+       
     ],
     interiorImages: [
      

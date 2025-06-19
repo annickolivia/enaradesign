@@ -90,7 +90,7 @@ function Projets() {
           <option className="text-base text-gray-900" value="residentiel">Residentiel</option>
           <option className="text-base text-gray-900" value="professionel">Professionel</option>
         </select>
-              <h4  className="pb-10 font-light relative md:top-64 top-96 text-white text-3xl md:text-5xl">NOS PROJETS</h4>
+          <h4  className="pb-10 font-light relative md:top-64 top-96 text-white text-3xl md:text-5xl">NOS PROJETS</h4>
         {/* <ProjetFeature activeProjet={activeProjet}/> */}
       </div>
     <ProjetsCarousel selectedProjet={selectedProjet} handleCardClick={handleCardClick}/>

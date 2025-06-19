@@ -116,7 +116,8 @@ function Footer() {
             })
           }
         </div> */}
-        <p className='text-white py-3 md:py-0'>COPYRIGHT SENSO DESIGN AGENCY 2025</p>
+        {/* <p className='text-white py-3 md:py-0'>COPYRIGHT SENSO DESIGN AGENCY 2025</p> */}
+        <p className='text-white py-3 md:py-0'>Copyright senso design agency 2025</p>
     </footer>
   )
 }

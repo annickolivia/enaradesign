@@ -181,7 +181,7 @@ function Contact() {
   return (
     <AnimatePresence>
       <motion.div
-        className="font-normal w-full flex flex-col"
+        className="font-normal w-full flex flex-col mt-10"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
@@ -205,8 +205,8 @@ function SousMenu({ activeSousMenu, activeMenu }) {
         <About />
       ) : activeMenu === 'contact' ? (
         <Contact />
-      ) : (
-        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full ">
+      ) : activeMenu === 'portfolio' ? (
+        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full mt-10">
           <AnimatePresence>
             {activeSousMenu.map((a) => (
               <motion.li
@@ -220,6 +220,25 @@ function SousMenu({ activeSousMenu, activeMenu }) {
                 <Link to="/projets" className="text-left font-extralight">
                   {a.nom}
                 </Link>
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </ul>
+      ) : (
+        <ul className="text-2xl font-normal flex flex-col items-start justify-start w-full mt-10">
+          <AnimatePresence>
+            {activeSousMenu.map((a) => (
+              <motion.li
+                key={a.nom}
+                className="py-2 hover:translate-x-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+              >
+                <span className="text-left font-extralight">
+                  {a.nom}
+                </span>
               </motion.li>
             ))}
           </AnimatePresence>
