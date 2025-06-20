@@ -5,6 +5,7 @@ import { PortCateg, ServiceCateg, projects } from './bdProjet';
 import ProjectCard from './Acceuil/projectCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Autoplay } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { mainColors } from '../styles/variables';
 import 'swiper/css';
@@ -17,6 +18,7 @@ function Navbar() {
   const [activeSousMenu, setActiveSousMenu] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menu = ['A propos', 'Services', 'Portfolio', 'Contact'];
 
@@ -119,6 +121,7 @@ function Navbar() {
           {menu.map((m, index) => (
             <Link
               key={index}
+              to={m === 'Portfolio' ? '/projets' : '#'}
               className="relative font-light after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
               onMouseOver={() => {
                 setIsMenuOpen(true);
@@ -129,10 +132,11 @@ function Navbar() {
                 handleHoverChange(m);
               }}
             >
-              {m}
+                  {m}
             </Link>
           ))}
         </div>
+        
       </nav>
     </>
   );
